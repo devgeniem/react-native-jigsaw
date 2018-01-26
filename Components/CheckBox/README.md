@@ -5,7 +5,7 @@ CheckBox component
 ### API
 Prop name        | Type      | Default | Description
 ---------------- | --------- | ------- | ------------------
-checked          | bool      |         | Is checbox checked or not
+checked          | bool      | false   | Is checkbox checked or not
 checkColor       | string    |         | Color for the default check icon
 checkComponent   | component |         | Check component replaces the default check icon
 onChange         | function  |         | Function that gets called on checkbox press
