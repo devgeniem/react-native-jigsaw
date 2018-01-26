@@ -37,7 +37,7 @@ export default class Button extends React.Component {
       return (
         <TouchableNativeFeedback
           onPress={this.onPress}
-          background={TouchableNativeFeedback.Ripple(this.getRippleColor(), true)}
+          background={TouchableNativeFeedback.Ripple(this.getRippleColor(), false)}
         >
           <View style={[styles.button, buttonStyle]}>
             { this.renderButtonContent() }
