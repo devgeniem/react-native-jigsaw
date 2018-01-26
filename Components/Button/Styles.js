@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { Fonts } from '../../Themes'
+import { Colors } from '../../Themes'
 
 export default StyleSheet.create({
   button: {
@@ -7,10 +7,9 @@ export default StyleSheet.create({
     alignSelf: 'center'
   },
   buttonText: {
-    color: 'white',
-    backgroundColor: 'transparent',
+    color: Colors.white,
+    backgroundColor: Colors.transparent,
     textAlign: 'center',
-    fontWeight: 'bold',
-    fontFamily: Fonts.type.base
+    fontWeight: 'bold'
   }
 })

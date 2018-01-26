@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableHighlight, TouchableNativeFeedback, TouchableOpacity, Platform, ActivityIndicator } from 'react-native'
 import { Colors } from '../../Themes'
-import styles from './Styles/ButtonStyles'
+import styles from './Styles'
 
 export default class Button extends React.Component {
   onPress = () => window.requestAnimationFrame(() => this.props.onPress())
@@ -21,9 +21,10 @@ export default class Button extends React.Component {
         </Text>
       )
     }
-    return <Text style={styles.buttonText}>{this.renderText()}</Text>
+    return <Text style={styles.buttonText}>{this.props.text}</Text>
   }
 
+  /* Set the color of the ripple effect (TouchableNativeFeedback) */
   getRippleColor = () => {
     if (this.props.rippleColor) return this.props.rippleColor
     return Colors.white
