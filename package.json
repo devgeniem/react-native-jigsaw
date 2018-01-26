@@ -4,7 +4,10 @@
   "description": "React native UI component library",
   "main": "components/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard --verbose | snazzy",
+    "git-hook": "npm run lint -s",
+    "precommit": "npm run git-hook",
+    "prepush": "npm run git-hook"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/devgeniem/react-native-jigsaw/issues"
   },
-  "homepage": "https://github.com/devgeniem/react-native-jigsaw#readme"
+  "homepage": "https://github.com/devgeniem/react-native-jigsaw#readme",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-native": "^0.50.0"
+  },
+  "devDependencies": {
+    "husky": "^0.13.1",
+    "snazzy": "^7.0.0",
+    "standard": "10.0.2"
+  }
 }
