@@ -3,8 +3,8 @@ import { Colors } from '../../Themes'
 
 export default StyleSheet.create({
   container: {
-    borderColor: Colors.hairline,
-    backgroundColor: Colors.grey,
+    borderColor: Colors.grey,
+    backgroundColor: Colors.white,
     borderWidth: 1,
     borderRadius: 6,
     alignItems: 'center',
