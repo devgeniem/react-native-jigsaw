@@ -29,8 +29,24 @@
     "react-native": "^0.50.0"
   },
   "devDependencies": {
+    "babel-eslint": "7.1.1",
     "husky": "^0.13.1",
     "snazzy": "^7.0.0",
     "standard": "10.0.2"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "test",
+      "jest",
+      "expect",
+      "fetch",
+      "navigator",
+      "__DEV__",
+      "XMLHttpRequest",
+      "FormData",
+      "React$Element"
+    ]
   }
 }
