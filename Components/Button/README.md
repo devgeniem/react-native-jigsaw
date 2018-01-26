@@ -11,7 +11,7 @@ iosUnderlayColor | string   |         | iOS underlay color
 loaderColor      | string   | 'white' | Loader color
 loading          | boolean  | false   | Is loading
 onPress          | function |         | onPress callback
-opacity          | boolean  | false   | Opacity on/off
+opacity          | boolean  | false   | Use TouchableOpacity
 rippleColor      | string   | 'white' | Ripple color
 textStyle        | object   |         | Text tyles
 
