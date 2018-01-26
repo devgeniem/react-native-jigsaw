@@ -31,7 +31,7 @@ export default class CheckBox extends PureComponent {
       return checkComponent
     }
 
-    const color = checkColor ? checkColor : Colors.black
+    const color = checkColor || Colors.black
     return (
       <Icon name='md-checkmark' size={20} color={color} />
     )
@@ -57,7 +57,7 @@ export default class CheckBox extends PureComponent {
 
   render () {
     const {onChange, style} = this.props
-    const containerStyle = style ? style : styles.container
+    const containerStyle = style || styles.container
     return (
       <TouchableOpacity onPress={onChange} style={containerStyle} activeOpacity={0.8}>
         <View style={styles.innerContainer}>

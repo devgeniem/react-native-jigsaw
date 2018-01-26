@@ -18,10 +18,10 @@ textStyle        | object   |         | Text tyles
 ### Code example
 
 ```jsx
-import { Button } from 'react-native-jigsaw';
+import { Button } from 'react-native-jigsaw'
 
 <Button
-  onPress={() => onButtonPress()}
-  loading={this.isLoading()}
+  onPress={this.onButtonPress}
+  loading={this.isLoading}
 >
 ```
