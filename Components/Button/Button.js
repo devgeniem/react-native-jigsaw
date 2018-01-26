@@ -17,7 +17,7 @@ export default class Button extends React.Component {
     else if (this.props.textStyle) {
       return (
         <Text style={[styles.buttonText, this.props.textStyle]}>
-          {this.renderText()}
+          {this.props.text}
         </Text>
       )
     }
