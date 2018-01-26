@@ -1,0 +1,25 @@
+{
+  "name": "react-native-jigsaw",
+  "version": "0.0.1",
+  "description": "React native UI component library",
+  "main": "components/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devgeniem/react-native-jigsaw.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "ui",
+    "component"
+  ],
+  "author": "Geniem Oy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devgeniem/react-native-jigsaw/issues"
+  },
+  "homepage": "https://github.com/devgeniem/react-native-jigsaw#readme"
+}
