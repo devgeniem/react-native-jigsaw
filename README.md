@@ -9,3 +9,4 @@ Collection of react native components to use in your project
 
 ### Components
 - [Button](./Components/Button/README.md)
+- [Checkbox](./Components/CheckBox/README.md)
