@@ -1,8 +1,8 @@
 {
   "name": "react-native-jigsaw",
   "version": "0.0.1",
-  "description": "React native UI component library",
-  "main": "components/index.js",
+  "description": "React native component library",
+  "main": "Components/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,6 @@
   "keywords": [
     "react",
     "native",
-    "ui",
     "component"
   ],
   "author": "Geniem Oy",
