@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import { View, TouchableOpacity, Animated, Easing } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import styles from './Styles'
 import { Colors } from '../../Themes'
+import styles from './Styles'
 
 export default class CheckBox extends PureComponent {
   constructor (props) {
