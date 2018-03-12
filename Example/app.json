@@ -1,4 +1,8 @@
 {
   "name": "Example",
-  "displayName": "Example"
+  "displayName": "Example",
+  "packagerOpts": {
+    "projectRoots": "",
+    "config": "rn-cli.config.js"
+  }
 }

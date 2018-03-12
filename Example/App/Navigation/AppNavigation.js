@@ -1,6 +1,5 @@
 import { StackNavigator } from 'react-navigation'
 import LaunchScreen from '../Containers/LaunchScreen'
-
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
@@ -11,7 +10,6 @@ const PrimaryNav = StackNavigator({
   headerMode: 'none',
   initialRouteName: 'LaunchScreen',
   navigationOptions: {
-    headerStyle: styles.header
   }
 })
 

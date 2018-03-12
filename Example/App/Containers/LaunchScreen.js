@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, View } from 'react-native'
-
-// Styles
+import { CheckBox } from '../../../Components'
 import styles from './Styles/LaunchScreenStyles'
 
 export default class LaunchScreen extends Component {
@@ -11,8 +10,8 @@ export default class LaunchScreen extends Component {
         <ScrollView style={styles.container}>
           <View style={styles.section}>
             <Text style={styles.title}>React Native Jigsaw Example</Text>
+            <CheckBox checked={true} />
           </View>
-
         </ScrollView>
       </View>
     )

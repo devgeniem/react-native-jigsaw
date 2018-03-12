@@ -26,7 +26,8 @@
   "homepage": "https://github.com/devgeniem/react-native-jigsaw#readme",
   "peerDependencies": {
     "react": "^16.0.0",
-    "react-native": "^0.50.0"
+    "react-native": "^0.50.0",
+    "react-native-vector-icons": "^4.5.0"
   },
   "devDependencies": {
     "babel-eslint": "7.1.1",
@@ -36,9 +37,7 @@
     "snazzy": "^7.0.0",
     "standard": "10.0.2"
   },
-  "dependencies": {
-    "react-native-vector-icons": "^4.5.0"
-  },
+  "dependencies": {},
   "standard": {
     "parser": "babel-eslint",
     "globals": [
