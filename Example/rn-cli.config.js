@@ -1,7 +1,6 @@
-var path = require('path')
-const metroBundler = require('metro-bundler')
+const path = require('path')
 
-var config = {
+const config = {
   extraNodeModules: {
     'react-native': path.resolve(__dirname, 'node_modules/react-native'),
     'react': path.resolve(__dirname, 'node_modules/react'),

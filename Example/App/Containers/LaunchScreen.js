@@ -10,7 +10,7 @@ export default class LaunchScreen extends Component {
         <ScrollView style={styles.container}>
           <View style={styles.section}>
             <Text style={styles.title}>React Native Jigsaw Example</Text>
-            <CheckBox checked={true} />
+            <CheckBox checked />
           </View>
         </ScrollView>
       </View>
