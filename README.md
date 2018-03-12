@@ -5,7 +5,7 @@ Jigsaw - React native component library
 Collection of react native components to use in your project
 
 ### Installation
-`npm install react-native-jigsaw`
+`npm install react-native-jigsaw --save`
 
 ### Components
 - [Button](./Components/Button/README.md)
