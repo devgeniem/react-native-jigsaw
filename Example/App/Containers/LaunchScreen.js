@@ -3,6 +3,10 @@ import { ScrollView, Text, TouchableOpacity } from 'react-native'
 import styles from './Styles/LaunchScreenStyles'
 
 export default class LaunchScreen extends Component {
+  static navigationOptions = {
+    header: null
+  }
+
   toButton = () => this.props.navigation.navigate('ButtonScreen')
   toCheckBox = () => this.props.navigation.navigate('CheckBoxScreen')
   toInput = () => this.props.navigation.navigate('InputScreen')

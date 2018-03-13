@@ -12,7 +12,6 @@ const PrimaryNav = StackNavigator({
   InputScreen: { screen: InputScreen }
 }, {
   // Default config for all screens
-  headerMode: 'none',
   initialRouteName: 'LaunchScreen',
   navigationOptions: {
   }

@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { ScrollView, View, Text } from 'react-native'
 import { CheckBox, RadioButton } from '../../../Components'
+import Header from '../Components/Header'
 import styles from './Styles/CheckBoxScreenStyles'
 
 const RADIO_BUTTON_OPTIONS = ['A', 'B', 'C', 'D']
 
 export default class CheckBoxScreen extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    header: <Header goBack={navigation.goBack} />
+  })
+
   constructor (props) {
     super(props)
     this.state = {

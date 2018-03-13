@@ -3,44 +3,107 @@ import { View, Text, TouchableHighlight, TouchableNativeFeedback, TouchableOpaci
 import { Colors } from '../../Themes'
 import styles from './Styles'
 
-export default class Button extends React.Component {
+export default class Button extends React.PureComponent {
+  /* Wrap onPress inside requestAnimationFrame to allow Ripple effect to work properly */
   onPress = () => window.requestAnimationFrame(() => this.props.onPress())
 
+  getButtonStyle = () => {
+    const { buttonStyle, secondary } = this.props
+    return buttonStyle || secondary ? styles.secondaryButton : styles.primaryButton
+  }
+
+  getCustomButtonStyles = () => {
+    const { width, height, borderRadius, borderWidth, borderColor, backgroundColor, margin, padding } = this.props
+    const customStyles = {
+      ...(width ? {width} : {}),
+      ...(height ? {height} : {}),
+      ...(borderRadius ? {borderRadius} : {}),
+      ...(borderWidth ? {borderWidth} : {}),
+      ...(borderColor ? {borderColor} : {}),
+      ...(backgroundColor ? {backgroundColor} : {}),
+      ...(margin ? {margin} : {}),
+      ...(padding ? {padding} : {})
+    }
+    return customStyles
+  }
+
+  getTextStyle = () => {
+    const { textStyle, secondary } = this.props
+    return textStyle || secondary ? styles.secondaryText : styles.primaryText
+  }
+
+  getCustomTextStyles = () => {
+    const { color, fontSize, fontWeight, fontFamily, textMargin, textPadding } = this.props
+    const customStyles = {
+      ...(color ? {color} : {}),
+      ...(fontSize ? {fontSize} : {}),
+      ...(fontWeight ? {fontWeight} : {}),
+      ...(fontFamily ? {fontFamily} : {}),
+      ...(textMargin ? {margin: textMargin} : {}),
+      ...(textPadding ? {padding: textPadding} : {})
+    }
+    console.log(customStyles)
+    return customStyles
+  }
+
+  getRippleColor = () => {
+    const { rippleColor, secondary } = this.props
+    return rippleColor || secondary ? Colors.violet : Colors.white
+  }
+
+  getIosUnderlayColor = () => {
+    const { iosUnderlayColor, secondary } = this.props
+    return iosUnderlayColor || secondary ? Colors.secondaryUnderlay : Colors.primaryUnderlay
+  }
+
   renderLoader = () => {
-    const color = this.props.loaderColor || Colors.white
-    const loaderSize = this.props.largeLoader ? 'large' : 'small'
+    const { loaderColor, largeLoader, secondary } = this.props
+    /* Default color for loader is white */
+    const color = loaderColor || secondary ? Colors.violet : Colors.white
+    /* Default loader size is small */
+    const loaderSize = largeLoader ? 'large' : 'small'
+
     return <ActivityIndicator color={color} size={loaderSize} />
   }
 
-  renderButtonContent = () => {
-    if (this.props.loading) return this.renderLoader()
-    else if (this.props.textStyle) {
-      return (
-        <Text style={[styles.buttonText, this.props.textStyle]}>
-          {this.props.text}
-        </Text>
-      )
-    }
-    return <Text style={styles.buttonText}>{this.props.text}</Text>
+  renderLeftIcon = () => this.props.leftIcon || null
+  renderRightIcon = () => this.props.rightIcon || null
+
+  renderDisabled = () => {
+    if (this.props.disabled) return <View style={styles.disabled} />
+    return null
   }
 
-  /* Set the color of the ripple effect (TouchableNativeFeedback) */
-  getRippleColor = () => {
-    if (this.props.rippleColor) return this.props.rippleColor
-    return Colors.white
+  renderContent = () => {
+    const { loading, text } = this.props
+
+    if (loading) return this.renderLoader()
+
+    const style = this.getTextStyle()
+    const customStyle = this.getCustomTextStyles()
+
+    return <Text style={[style, customStyle]}>{text}</Text>
   }
 
   renderButton = () => {
-    const { buttonStyle, iosUnderlayColor } = this.props
+    const style = this.getButtonStyle()
+    const customStyle = this.getCustomButtonStyles()
+    const ripple = this.getRippleColor()
+    const iosUnderlayColor = this.getIosUnderlayColor()
+    const disabled = this.props.loading || this.props.disabled
 
     if (Platform.OS === 'android' && Platform.Version > 20) {
       return (
         <TouchableNativeFeedback
+          background={TouchableNativeFeedback.Ripple(ripple, false)}
           onPress={this.onPress}
-          background={TouchableNativeFeedback.Ripple(this.getRippleColor(), false)}
+          disabled={disabled}
         >
-          <View style={[styles.button, buttonStyle]}>
-            { this.renderButtonContent() }
+          <View style={[style, customStyle]}>
+            { this.renderLeftIcon() }
+            { this.renderContent() }
+            { this.renderRightIcon() }
+            { this.renderDisabled() }
           </View>
         </TouchableNativeFeedback>
       )
@@ -48,30 +111,36 @@ export default class Button extends React.Component {
       if (this.props.opacity) {
         return (
           <TouchableOpacity
-            style={[styles.button, buttonStyle]}
+            style={[style, customStyle]}
             onPress={this.onPress}
+            disabled={disabled}
           >
-            { this.renderButtonContent() }
+            { this.renderLeftIcon() }
+            { this.renderContent() }
+            { this.renderRightIcon() }
+            { this.renderDisabled() }
           </TouchableOpacity>
         )
       }
       return (
         <TouchableHighlight
-          style={[styles.button, buttonStyle]}
+          style={[style, customStyle]}
           onPress={this.onPress}
           underlayColor={iosUnderlayColor}
+          disabled={disabled}
         >
-          { this.renderButtonContent() }
+          <View style={styles.flex}>
+            { this.renderLeftIcon() }
+            { this.renderContent() }
+            { this.renderRightIcon() }
+            { this.renderDisabled() }
+          </View>
         </TouchableHighlight>
       )
     }
   }
 
   render () {
-    return (
-      <View style={this.props.containerStyle}>
-        { this.renderButton() }
-      </View>
-    )
+    return this.renderButton()
   }
 }
