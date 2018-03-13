@@ -29,7 +29,7 @@ export default class RadioButton extends PureComponent {
       checked,
       color,
       disabled,
-      onChange,
+      onPress,
       renderCheck,
       size,
       style
@@ -49,7 +49,7 @@ export default class RadioButton extends PureComponent {
         checked={checked}
         color={color || DEFAULT_COLOR}
         disabled={disabled}
-        onChange={onChange}
+        onPress={onPress}
         renderCheck={renderCheck || this.renderDefaultCheck}
         size={containerSize}
         style={containerStyle}

@@ -61,7 +61,7 @@ export default class CheckBox extends PureComponent {
   }
 
   render () {
-    const {onChange, style, size, color} = this.props
+    const {onPress, style, size, color} = this.props
 
     const dynamicStyle = {
       height: size || DEFAULT_SIZE,
@@ -73,7 +73,7 @@ export default class CheckBox extends PureComponent {
     const containerStyle = style || [ dynamicStyle, styles.container ]
 
     return (
-      <TouchableOpacity onPress={onChange} style={containerStyle} activeOpacity={1}>
+      <TouchableOpacity onPress={onPress} style={containerStyle} activeOpacity={1}>
         <View style={styles.innerContainer}>
           {this.renderCheck()}
         </View>
