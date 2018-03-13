@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import { ScrollView } from 'react-native'
 import { Button } from '../../../Components'
+import Header from '../Components/Header'
 import Icon from 'react-native-vector-icons/Ionicons'
 import styles from './Styles/ButtonScreenStyles'
 
 export default class ButtonScreen extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    header: <Header goBack={navigation.goBack} />
+  })
+
   onPress = () => console.log('on on on')
 
   render () {
