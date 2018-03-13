@@ -1,10 +1,11 @@
 import { StackNavigator } from 'react-navigation'
 import LaunchScreen from '../Containers/LaunchScreen'
-import styles from './Styles/NavigationStyles'
+import ButtonScreen from '../Containers/ButtonScreen'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
-  LaunchScreen: { screen: LaunchScreen }
+  LaunchScreen: { screen: LaunchScreen },
+  ButtonScreen: { screen: ButtonScreen }
 }, {
   // Default config for all screens
   headerMode: 'none',

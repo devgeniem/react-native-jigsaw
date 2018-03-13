@@ -1,5 +1,5 @@
 // a library to wrap and simplify api calls
-import apisauce from 'apisauce'
+// import apisauce from 'apisauce'
 
 // our "constructor"
 const create = (baseURL = 'https://api.github.com/') => {
@@ -9,16 +9,16 @@ const create = (baseURL = 'https://api.github.com/') => {
   //
   // Create and configure an apisauce-based api object.
   //
-  const api = apisauce.create({
+  // const api = apisauce.create({
     // base URL is read from the "constructor"
-    baseURL,
+    // baseURL,
     // here are some default headers
-    headers: {
-      'Cache-Control': 'no-cache'
-    },
+    // headers: {
+      // 'Cache-Control': 'no-cache'
+    // },
     // 10 second timeout...
-    timeout: 10000
-  })
+    // timeout: 10000
+  // })
 
   // ------
   // STEP 2

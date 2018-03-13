@@ -5,11 +5,5 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     padding: 15
-  },
-  link: {
-    color: 'blue',
-    fontSize: 24,
-    alignSelf: 'center',
-    padding: 10
   }
 })

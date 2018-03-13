@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, View } from 'react-native'
-import { CheckBox } from '../../../Components'
+import { ScrollView, Text, TouchableOpacity } from 'react-native'
 import styles from './Styles/LaunchScreenStyles'
 
 export default class LaunchScreen extends Component {
+  toButton = () => this.props.navigation.navigate('ButtonScreen')
+
   render () {
     return (
-      <View style={styles.mainContainer}>
-        <ScrollView style={styles.container}>
-          <View style={styles.section}>
-            <Text style={styles.title}>React Native Jigsaw Example</Text>
-            <CheckBox checked={true} />
-          </View>
-        </ScrollView>
-      </View>
+      <ScrollView style={styles.container}>
+        <TouchableOpacity onPress={this.toButton}>
+          <Text style={styles.link}>Button</Text>
+        </TouchableOpacity>
+      </ScrollView>
     )
   }
 }
