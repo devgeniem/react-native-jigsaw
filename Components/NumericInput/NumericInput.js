@@ -60,7 +60,7 @@ export default class NumericInput extends PureComponent {
   handleUpPress = () => {
     const {text} = this.state
     let number = this.textToFloat(text)
-    number += this.props.step
+    number += this.props.step || 1
     number = this.applyLimits(Math.floor(number))
     this.props.onValueChange(number)
   }
@@ -68,7 +68,7 @@ export default class NumericInput extends PureComponent {
   handleDownPress = () => {
     const {text} = this.state
     let number = this.textToFloat(text)
-    number -= this.props.step
+    number -= this.props.step || 1
     number = this.applyLimits(Math.ceil(number))
     this.props.onValueChange(number)
   }
