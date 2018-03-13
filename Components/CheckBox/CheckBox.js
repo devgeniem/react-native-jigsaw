@@ -1,8 +1,11 @@
 import React, { PureComponent } from 'react'
 import { View, TouchableOpacity, Animated, Easing } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons'
-import { Colors } from '../../Themes'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 import styles from './Styles'
+import { Colors } from '../../Themes'
+
+const DEFAULT_SIZE = 32
+const DEFAULT_COLOR = Colors.default
 
 export default class CheckBox extends PureComponent {
   constructor (props) {
@@ -25,15 +28,17 @@ export default class CheckBox extends PureComponent {
   }
 
   renderCheckIcon = () => {
-    const {checkComponent, checkColor} = this.props
-    /* Render custom check component */
-    if (checkComponent) {
-      return checkComponent
+    const {renderCheck, color, size, invert} = this.props
+    /* Render custom check component if provided */
+    if (renderCheck) {
+      return renderCheck()
     }
 
-    const color = checkColor || Colors.black
+    const checkSize = Math.floor(0.8 * (size || DEFAULT_SIZE))
+    const checkColor = invert ? Colors.white : (color || DEFAULT_COLOR)
+
     return (
-      <Icon name='md-checkmark' size={20} color={color} />
+      <Icon name='done' size={checkSize} color={checkColor} style={styles.check} />
     )
   }
 
@@ -45,7 +50,7 @@ export default class CheckBox extends PureComponent {
     })
     const scale = this.animatedValue.interpolate({
       inputRange: [0, 0.25, 1],
-      outputRange: [0.5, 1.2, 1]
+      outputRange: [0.5, 1.1, 1]
     })
 
     return (
@@ -56,10 +61,21 @@ export default class CheckBox extends PureComponent {
   }
 
   render () {
-    const {onChange, style} = this.props
-    const containerStyle = style || styles.container
+    const {onPress, style, size, color, invert} = this.props
+    const checkBoxColor = color || DEFAULT_COLOR
+
+    const dynamicStyle = {
+      height: size || DEFAULT_SIZE,
+      width: size || DEFAULT_SIZE,
+      borderColor: checkBoxColor,
+      backgroundColor: invert ? checkBoxColor : Colors.transparent
+    }
+
+    /* Check if component received custom style */
+    const containerStyle = style || [ dynamicStyle, styles.container ]
+
     return (
-      <TouchableOpacity onPress={onChange} style={containerStyle} activeOpacity={0.8}>
+      <TouchableOpacity onPress={onPress} style={containerStyle} activeOpacity={1}>
         <View style={styles.innerContainer}>
           {this.renderCheck()}
         </View>

@@ -1,49 +1,64 @@
 import React, { PureComponent } from 'react'
-import { TouchableOpacity, Animated, Easing } from 'react-native'
+import { View } from 'react-native'
+import CheckBox from '../CheckBox/CheckBox'
 import styles from './Styles'
+import { Colors } from '../../Themes'
+
+const DEFAULT_SIZE = 32
+const DEFAULT_COLOR = Colors.default
 
 export default class RadioButton extends PureComponent {
-  constructor (props) {
-    super(props)
-    this.animatedValue = new Animated.Value(0)
+  renderDefaultCheck = () => {
+    /* Render circle to the center of the radio button */
+    const { size, color, invert } = this.props
+    const checkSize = Math.floor((size || DEFAULT_SIZE) * 0.5)
+    const checkStyle = {
+      backgroundColor: invert ? Colors.white : (color || DEFAULT_COLOR),
+      width: checkSize,
+      height: checkSize,
+      borderRadius: Math.round(checkSize * 0.5)
+    }
+
+    return (
+      <View style={checkStyle} />
+    )
   }
-
-  componentWillReceiveProps (nextProps) {
-    /* Start animation when component receives next props. */
-    const nextVal = nextProps.checked ? 1 : 0
-    Animated.timing(
-      this.animatedValue,
-      {
-        toValue: nextVal,
-        duration: 100,
-        easing: Easing.inOut(Easing.quad),
-        useNativeDriver: true
-      }
-    ).start()
-  }
-
-  renderCheck = () => {
-    /* Use animated opacity and scale values */
-    const opacity = this.animatedValue.interpolate({
-      inputRange: [0, 0.25, 1],
-      outputRange: [0, 1, 1]
-    })
-    const scale = this.animatedValue.interpolate({
-      inputRange: [0, 0.25, 1],
-      outputRange: [0.5, 1.2, 1]
-    })
-
-    return <Animated.View style={[this.getDotStyle(), {transform: [{scale}], opacity}]} />
-  }
-
-  getContainerStyle = () => this.props.containerStyle || styles.container
-  getDotStyle = () => this.props.dotStyle || styles.dot
 
   render () {
+    const {
+      checked,
+      color,
+      disabled,
+      invert,
+      onPress,
+      renderCheck,
+      size,
+      style
+    } = this.props
+
+    const checkBoxColor = color || DEFAULT_COLOR
+    const containerSize = size || DEFAULT_SIZE
+
+    const dynamicStyles = {
+      borderColor: checkBoxColor,
+      borderRadius: Math.round((containerSize) * 0.5),
+      width: containerSize,
+      height: containerSize,
+      backgroundColor: invert ? checkBoxColor : Colors.white
+    }
+    const containerStyle = style || [dynamicStyles, styles.container]
+
     return (
-      <TouchableOpacity onPress={this.props.onChange} style={this.getContainerStyle()} activeOpacity={0.8}>
-        {this.renderCheck()}
-      </TouchableOpacity>
+      <CheckBox
+        checked={checked}
+        color={checkBoxColor}
+        disabled={disabled}
+        onPress={onPress}
+        renderCheck={renderCheck || this.renderDefaultCheck}
+        size={containerSize}
+        style={containerStyle}
+        invert={invert}
+      />
     )
   }
 }
