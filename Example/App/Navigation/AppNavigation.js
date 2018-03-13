@@ -2,14 +2,14 @@ import { StackNavigator } from 'react-navigation'
 import LaunchScreen from '../Containers/LaunchScreen'
 import ButtonScreen from '../Containers/ButtonScreen'
 import CheckBoxScreen from '../Containers/CheckBoxScreen'
-import TextInputScreen from '../Containers/TextInputScreen'
+import InputScreen from '../Containers/InputScreen'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
   LaunchScreen: { screen: LaunchScreen },
   ButtonScreen: { screen: ButtonScreen },
   CheckBoxScreen: { screen: CheckBoxScreen },
-  TextInputScreen: { screen: TextInputScreen }
+  InputScreen: { screen: InputScreen }
 }, {
   // Default config for all screens
   initialRouteName: 'LaunchScreen',

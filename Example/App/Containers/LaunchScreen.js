@@ -9,7 +9,7 @@ export default class LaunchScreen extends Component {
 
   toButton = () => this.props.navigation.navigate('ButtonScreen')
   toCheckBox = () => this.props.navigation.navigate('CheckBoxScreen')
-  toTextInput = () => this.props.navigation.navigate('TextInputScreen')
+  toTextInput = () => this.props.navigation.navigate('InputScreen')
 
   render () {
     return (
@@ -21,7 +21,7 @@ export default class LaunchScreen extends Component {
           <Text style={styles.link}>CheckBox &amp; RadioButton</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={this.toTextInput}>
-          <Text style={styles.link}>TextInput</Text>
+          <Text style={styles.link}>Input</Text>
         </TouchableOpacity>
       </ScrollView>
     )
