@@ -12,6 +12,7 @@ export default class CheckBoxScreen extends Component {
       check1: true,
       check2: false,
       check3: false,
+      check4: false,
 
       radioButtonIndex: null
     }
@@ -20,6 +21,7 @@ export default class CheckBoxScreen extends Component {
   toggleCheck1 = () => this.setState({ check1: !this.state.check1 })
   toggleCheck2 = () => this.setState({ check2: !this.state.check2 })
   toggleCheck3 = () => this.setState({ check3: !this.state.check3 })
+  toggleCheck4 = () => this.setState({ check4: !this.state.check4 })
 
   setRadioButtonIndex = (index) => this.setState({ radioButtonIndex: index })
 
@@ -37,19 +39,30 @@ export default class CheckBoxScreen extends Component {
           />
           <Text style={styles.label}>Default</Text>
         </View>
-        <View style={styles.row}>
-          <CheckBox
-            checked={this.state.check2}
-            onPress={this.toggleCheck2}
-            color={'#ff9900'}
-            renderCheck={this.renderCustomCheck}
-          />
-          <Text style={styles.label}>Custom check</Text>
-        </View>
+
         <View style={styles.row}>
           <CheckBox
             checked={this.state.check3}
             onPress={this.toggleCheck3}
+            invert
+          />
+          <Text style={styles.label}>Invert</Text>
+        </View>
+
+        <View style={styles.row}>
+          <CheckBox
+            checked={this.state.check2}
+            onPress={this.toggleCheck2}
+            color={'#00f'}
+            renderCheck={this.renderCustomCheck}
+          />
+          <Text style={styles.label}>Custom check</Text>
+        </View>
+
+        <View style={styles.row}>
+          <CheckBox
+            checked={this.state.check4}
+            onPress={this.toggleCheck4}
             color={'#cc4400'}
             size={48}
           />

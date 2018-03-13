@@ -28,14 +28,14 @@ export default class CheckBox extends PureComponent {
   }
 
   renderCheckIcon = () => {
-    const {renderCheck, color, size} = this.props
+    const {renderCheck, color, size, invert} = this.props
     /* Render custom check component if provided */
     if (renderCheck) {
       return renderCheck()
     }
 
     const checkSize = Math.floor(0.8 * (size || DEFAULT_SIZE))
-    const checkColor = color || DEFAULT_COLOR
+    const checkColor = invert ? Colors.white : (color || DEFAULT_COLOR)
 
     return (
       <Icon name='done' size={checkSize} color={checkColor} style={styles.check} />
@@ -61,12 +61,14 @@ export default class CheckBox extends PureComponent {
   }
 
   render () {
-    const {onPress, style, size, color} = this.props
+    const {onPress, style, size, color, invert} = this.props
+    const checkBoxColor = color || DEFAULT_COLOR
 
     const dynamicStyle = {
       height: size || DEFAULT_SIZE,
       width: size || DEFAULT_SIZE,
-      borderColor: color || DEFAULT_COLOR
+      borderColor: checkBoxColor,
+      backgroundColor: invert ? checkBoxColor : Colors.transparent
     }
 
     /* Check if component received custom style */

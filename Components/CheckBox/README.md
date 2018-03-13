@@ -6,9 +6,10 @@ CheckBox component
 Prop name        | Type      | Default | Description
 ---------------- | --------- | ------- | ------------------
 checked          | bool      | false   | Is checkbox checked or not
-checkColor       | string    |         | Color for the default check icon
-checkComponent   | component |         | Check component replaces the default check icon
-onChange         | function  |         | Function that gets called on checkbox press
+color            | string    |         | Set checkbox color
+invert           | bool      | false   | Use inverted checkbox style
+onPress          | function  |         | Function that gets called on checkbox press
+renderCheck      | function  |         | Replaces the default check
 style            | object    |         | Checkbox styles
 
 ### Code example
@@ -17,7 +18,7 @@ style            | object    |         | Checkbox styles
 import { CheckBox } from 'react-native-jigsaw'
 
 <CheckBox
-  onChange={this.toggleCheck}
+  onPress={this.toggleCheck}
   checked={this.state.checked}
   color='#000'
 />

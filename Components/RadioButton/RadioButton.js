@@ -10,10 +10,10 @@ const DEFAULT_COLOR = Colors.default
 export default class RadioButton extends PureComponent {
   renderDefaultCheck = () => {
     /* Render circle to the center of the radio button */
-    const {size, color} = this.props
+    const { size, color, invert } = this.props
     const checkSize = Math.floor((size || DEFAULT_SIZE) * 0.5)
     const checkStyle = {
-      backgroundColor: color || DEFAULT_COLOR,
+      backgroundColor: invert ? Colors.white : (color || DEFAULT_COLOR),
       width: checkSize,
       height: checkSize,
       borderRadius: Math.round(checkSize * 0.5)
@@ -29,30 +29,35 @@ export default class RadioButton extends PureComponent {
       checked,
       color,
       disabled,
+      invert,
       onPress,
       renderCheck,
       size,
       style
     } = this.props
 
+    const checkBoxColor = color || DEFAULT_COLOR
     const containerSize = size || DEFAULT_SIZE
+
     const dynamicStyles = {
-      borderColor: color || DEFAULT_COLOR,
+      borderColor: checkBoxColor,
       borderRadius: Math.round((containerSize) * 0.5),
       width: containerSize,
-      height: containerSize
+      height: containerSize,
+      backgroundColor: invert ? checkBoxColor : Colors.white
     }
     const containerStyle = style || [dynamicStyles, styles.container]
 
     return (
       <CheckBox
         checked={checked}
-        color={color || DEFAULT_COLOR}
+        color={checkBoxColor}
         disabled={disabled}
         onPress={onPress}
         renderCheck={renderCheck || this.renderDefaultCheck}
         size={containerSize}
         style={containerStyle}
+        invert={invert}
       />
     )
   }
