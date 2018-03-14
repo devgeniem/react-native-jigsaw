@@ -19,4 +19,4 @@ Collection of react native components to use in your project
 - [DateTimePicker](./Components/DateTimePicker/README.md)
 - [CollapseContainer](./Components/CollapseContainer/README.md)
 - [ModalContainer](./Components/ModalContainer/README.md)
-- [AutoHideHeaderContainer](./Components/AutoHideHeaderContainer/README.md)
+- [AutoHideHeaderList](./Components/AutoHideHeaderList/README.md)

@@ -5,6 +5,7 @@ import Input from './Input/Input'
 import NumericInput from './NumericInput/NumericInput'
 import DateTimePicker from './DateTimePicker/DateTimePicker'
 import CollapseContainer from './CollapseContainer/CollapseContainer'
+import AutoHideHeaderList from './AutoHideHeaderList/AutoHideHeaderList'
 
 export {
   Button,
@@ -13,5 +14,6 @@ export {
   Input,
   NumericInput,
   DateTimePicker,
-  CollapseContainer
+  CollapseContainer,
+  AutoHideHeaderList
 }
