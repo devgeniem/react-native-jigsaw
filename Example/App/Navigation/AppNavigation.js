@@ -4,6 +4,7 @@ import ButtonScreen from '../Containers/ButtonScreen'
 import CheckBoxScreen from '../Containers/CheckBoxScreen'
 import InputScreen from '../Containers/InputScreen'
 import CollapseScreen from '../Containers/CollapseScreen'
+import ModalScreen from '../Containers/ModalScreen'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
@@ -11,7 +12,8 @@ const PrimaryNav = StackNavigator({
   ButtonScreen: { screen: ButtonScreen },
   CheckBoxScreen: { screen: CheckBoxScreen },
   InputScreen: { screen: InputScreen },
-  CollapseScreen: { screen: CollapseScreen }
+  CollapseScreen: { screen: CollapseScreen },
+  ModalScreen: { screen: ModalScreen }
 }, {
   // Default config for all screens
   initialRouteName: 'LaunchScreen',

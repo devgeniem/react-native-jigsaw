@@ -11,6 +11,7 @@ export default class LaunchScreen extends Component {
   toCheckBox = () => this.props.navigation.navigate('CheckBoxScreen')
   toInput = () => this.props.navigation.navigate('InputScreen')
   toCollapse = () => this.props.navigation.navigate('CollapseScreen')
+  toModal = () => this.props.navigation.navigate('ModalScreen')
 
   render () {
     return (
@@ -26,6 +27,9 @@ export default class LaunchScreen extends Component {
         </TouchableOpacity>
         <TouchableOpacity onPress={this.toCollapse}>
           <Text style={styles.link}>CollapseContainer</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.toModal}>
+          <Text style={styles.link}>ModalContainer</Text>
         </TouchableOpacity>
       </ScrollView>
     )

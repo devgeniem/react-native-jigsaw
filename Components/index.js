@@ -4,6 +4,7 @@ import RadioButton from './RadioButton/RadioButton'
 import Input from './Input/Input'
 import NumericInput from './NumericInput/NumericInput'
 import CollapseContainer from './CollapseContainer/CollapseContainer'
+import ModalContainer from './ModalContainer/ModalContainer'
 
 export {
   Button,
@@ -11,5 +12,6 @@ export {
   RadioButton,
   Input,
   NumericInput,
-  CollapseContainer
+  CollapseContainer,
+  ModalContainer
 }
