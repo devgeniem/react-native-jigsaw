@@ -1,7 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Platform, DatePickerAndroid, TimePickerAndroid, DatePickerIOS } from 'react-native'
-import { Colors } from '../../Themes'
-import styles from './Styles'
+import { Platform, DatePickerAndroid, TimePickerAndroid, DatePickerIOS } from 'react-native'
 
 export default class DateTimePicker extends React.PureComponent {
   constructor (props) {
