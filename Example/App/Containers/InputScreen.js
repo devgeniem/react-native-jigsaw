@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ScrollView } from 'react-native'
-import { Input } from '../../../Components'
+import { Input, NumericInput } from '../../../Components'
 import Header from '../Components/Header'
 import Icon from 'react-native-vector-icons/Ionicons'
 import styles from './Styles/InputScreenStyles'
@@ -15,13 +15,15 @@ export default class InputScreen extends Component {
     this.state = {
       basicInputValue: '',
       multilineInputValue: '',
-      iconInputValue: ''
+      iconInputValue: '',
+      numericValue: 10
     }
   }
 
   onBasicChangeText = (basicInputValue) => this.setState({ basicInputValue })
   onMultilineChangeText = (multilineInputValue) => this.setState({ multilineInputValue })
   onIconChangeText = (iconInputValue) => this.setState({ iconInputValue })
+  setNumericValue = (value) => this.setState({ numericValue: value })
 
   render () {
     return (
@@ -51,6 +53,15 @@ export default class InputScreen extends Component {
           height={100}
           textAlignVertical='top'
           multiline
+        />
+
+        <NumericInput
+          value={this.state.numericValue}
+          onValueChange={this.setNumericValue}
+          step={1}
+          min={-100}
+          max={100}
+          marginVertical={10}
         />
       </ScrollView>
     )

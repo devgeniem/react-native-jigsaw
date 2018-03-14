@@ -1,25 +1,15 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import { Colors, Fonts } from '../../Themes'
-
-const { width } = Dimensions.get('window')
-
-const fontSize = (width < 330) ? 16 : 18
+import { Colors } from '../../Themes'
 
 export default StyleSheet.create({
   container: {
-
   },
   textInput: {
-    borderColor: Colors.lightGreyDarken,
-    borderWidth: 1,
-    backgroundColor: Colors.lightGrey,
-    color: Colors.text,
+    borderWidth: 2,
     height: 48,
     paddingHorizontal: 16,
-    borderRadius: 8,
-    fontSize: fontSize,
-    fontFamily: Fonts.type.base,
-    fontWeight: '600'
+    borderRadius: 0,
+    fontSize: 18
   },
   buttonsContainer: {
     position: 'absolute',
@@ -44,12 +34,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  sign: {
-    color: Colors.orange,
-    fontFamily: Fonts.type.base,
-    fontWeight: '600',
-    fontSize: 24,
-    height: 24,
-    lineHeight: 24
+  icon: {
+    backgroundColor: Colors.transparent
   }
 })

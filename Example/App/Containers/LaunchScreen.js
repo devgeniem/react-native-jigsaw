@@ -9,8 +9,9 @@ export default class LaunchScreen extends Component {
 
   toButton = () => this.props.navigation.navigate('ButtonScreen')
   toCheckBox = () => this.props.navigation.navigate('CheckBoxScreen')
-  toTextInput = () => this.props.navigation.navigate('InputScreen')
   toDateTime = () => this.props.navigation.navigate('DateTimeScreen')
+  toInput = () => this.props.navigation.navigate('InputScreen')
+  toCollapse = () => this.props.navigation.navigate('CollapseScreen')
 
   render () {
     return (
@@ -21,8 +22,11 @@ export default class LaunchScreen extends Component {
         <TouchableOpacity onPress={this.toCheckBox}>
           <Text style={styles.link}>CheckBox &amp; RadioButton</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.toTextInput}>
-          <Text style={styles.link}>Input</Text>
+        <TouchableOpacity onPress={this.toInput}>
+          <Text style={styles.link}>Input fields</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.toCollapse}>
+          <Text style={styles.link}>CollapseContainer</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={this.toDateTime}>
           <Text style={styles.link}>Native Date & Time Picker</Text>
