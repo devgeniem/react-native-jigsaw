@@ -10,6 +10,7 @@ export default class LaunchScreen extends Component {
   toButton = () => this.props.navigation.navigate('ButtonScreen')
   toCheckBox = () => this.props.navigation.navigate('CheckBoxScreen')
   toTextInput = () => this.props.navigation.navigate('InputScreen')
+  toDateTime = () => this.props.navigation.navigate('DateTimeScreen')
 
   render () {
     return (
@@ -22,6 +23,9 @@ export default class LaunchScreen extends Component {
         </TouchableOpacity>
         <TouchableOpacity onPress={this.toTextInput}>
           <Text style={styles.link}>Input</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.toDateTime}>
+          <Text style={styles.link}>Native Date & Time Picker</Text>
         </TouchableOpacity>
       </ScrollView>
     )
