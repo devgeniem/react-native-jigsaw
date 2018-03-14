@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { Colors } from '../../Themes'
 
 export default StyleSheet.create({
   applicationView: {
@@ -6,6 +7,7 @@ export default StyleSheet.create({
   },
   statusBar: {
     height: 20,
-    backgroundColor: '#000'
+    zIndex: 3,
+    backgroundColor: Colors.black
   }
 })

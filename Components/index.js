@@ -6,6 +6,7 @@ import NumericInput from './NumericInput/NumericInput'
 import DateTimePicker from './DateTimePicker/DateTimePicker'
 import CollapseContainer from './CollapseContainer/CollapseContainer'
 import ModalContainer from './ModalContainer/ModalContainer'
+import AutoHideHeaderList from './AutoHideHeaderList/AutoHideHeaderList'
 
 export {
   Button,
@@ -15,5 +16,6 @@ export {
   NumericInput,
   DateTimePicker,
   CollapseContainer,
-  ModalContainer
+  ModalContainer,
+  AutoHideHeaderList
 }

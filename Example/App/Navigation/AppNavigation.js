@@ -6,6 +6,7 @@ import InputScreen from '../Containers/InputScreen'
 import DateTimeScreen from '../Containers/DateTimeScreen'
 import CollapseScreen from '../Containers/CollapseScreen'
 import ModalScreen from '../Containers/ModalScreen'
+import AutoHideHeaderListScreen from '../Containers/AutoHideHeaderListScreen'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
@@ -15,7 +16,8 @@ const PrimaryNav = StackNavigator({
   InputScreen: { screen: InputScreen },
   DateTimeScreen: { screen: DateTimeScreen },
   CollapseScreen: { screen: CollapseScreen },
-  ModalScreen: { screen: ModalScreen }
+  ModalScreen: { screen: ModalScreen },
+  AutoHideHeaderListScreen: { screen: AutoHideHeaderListScreen }
 }, {
   // Default config for all screens
   initialRouteName: 'LaunchScreen',
