@@ -1,5 +1,7 @@
 import React from 'react'
-import { Platform, DatePickerAndroid, TimePickerAndroid, DatePickerIOS } from 'react-native'
+import { View, Platform, DatePickerAndroid, TimePickerAndroid, DatePickerIOS } from 'react-native'
+import { ModalContainer, Button } from '..'
+import styles from './Styles'
 
 export default class DateTimePicker extends React.PureComponent {
   constructor (props) {
@@ -36,17 +38,43 @@ export default class DateTimePicker extends React.PureComponent {
     closePicker()
   }
 
-  iosTimeChange = (value) => this.setState({ value })
+  iosChange = (value) => this.setState({ value })
 
-  renderIOS = () => {
-    const { type, value, onChange } = this.props
+  renderIosPickerType = () => {
+    const { type } = this.props
+    const { value } = this.state
+
     if (type === 'time') {
       const time = new Date(value)
-      return <DatePickerIOS mode='time' date={time} onDateChange={this.iosTimeChange} />
+      return <DatePickerIOS mode='time' date={time} onDateChange={this.iosChange} />
     } else {
-      return <DatePickerIOS mode='date' date={value} onDateChange={onChange} />
+      return <DatePickerIOS mode='date' date={value} onDateChange={this.iosChange} />
     }
   }
+
+  iosAcceptChange = () => {
+    const { type, onChange } = this.props
+    const { value } = this.state
+
+    if (type === 'time') {
+      try {
+        const time = { hour: value.getHours(), minute: value.getMinutes() }
+        return onChange(time)
+      } catch (e) {
+      }
+    }
+    return onChange(value)
+  }
+
+  renderIOS = () => (
+    <ModalContainer>
+      { this.renderIosPickerType() }
+      <View style={styles.buttons}>
+        <Button onPress={this.props.closePicker} text='Cancel' width='45%' secondary />
+        <Button onPress={this.iosAcceptChange} text='OK' width='45%' />
+      </View>
+    </ModalContainer>
+  )
 
   renderPicker = () => Platform.OS === 'ios' ? this.renderIOS() : null
 
