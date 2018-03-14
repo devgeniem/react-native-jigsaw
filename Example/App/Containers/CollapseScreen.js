@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { ScrollView, View, Text, TouchableOpacity } from 'react-native'
-import { CollapseContainer } from '../../../Components'
+import { ScrollView, View, Text } from 'react-native'
+import { CollapseContainer, Button } from '../../../Components'
 import Header from '../Components/Header'
 import styles from './Styles/CollapseScreenStyles'
 
@@ -33,16 +33,12 @@ export default class CollapseScreen extends Component {
     return (
       <ScrollView style={styles.container}>
         <Text style={styles.title}>CollapseContainer</Text>
-        <TouchableOpacity style={styles.header} onPress={this.toggleA} activeOpacity={0.9}>
-          <Text style={styles.headerText}>Click to toggle</Text>
-        </TouchableOpacity>
+        <Button onPress={this.toggleA} width={'100%'} text='Click to toggle' />
         <CollapseContainer visible={this.state.visibleA} style={styles.contentContainer}>
           {this.renderExampleContent()}
         </CollapseContainer>
-
-        <TouchableOpacity style={styles.header} onPress={this.toggleB} activeOpacity={0.9}>
-          <Text style={styles.headerText}>With fast animation</Text>
-        </TouchableOpacity>
+        <View style={styles.spacer} />
+        <Button onPress={this.toggleB} width={'100%'} text='With fast animation' />
         <CollapseContainer visible={this.state.visibleB} animationDuration={100} style={styles.contentContainer}>
           {this.renderExampleContent()}
         </CollapseContainer>
