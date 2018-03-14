@@ -4,6 +4,7 @@ import RadioButton from './RadioButton/RadioButton'
 import Input from './Input/Input'
 import NumericInput from './NumericInput/NumericInput'
 import DateTimePicker from './DateTimePicker/DateTimePicker'
+import Picker from './Picker/Picker'
 import CollapseContainer from './CollapseContainer/CollapseContainer'
 import ModalContainer from './ModalContainer/ModalContainer'
 import AutoHideHeaderList from './AutoHideHeaderList/AutoHideHeaderList'
@@ -15,6 +16,7 @@ export {
   Input,
   NumericInput,
   DateTimePicker,
+  Picker,
   CollapseContainer,
   ModalContainer,
   AutoHideHeaderList
