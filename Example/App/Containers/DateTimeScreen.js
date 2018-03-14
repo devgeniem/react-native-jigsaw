@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { ScrollView, Keyboard } from 'react-native'
 import { Input, DateTimePicker } from '../../../Components'
+import moment from 'moment'
 import Header from '../Components/Header'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { Colors } from '../Themes'
@@ -38,11 +39,11 @@ export default class DateTimeScreen extends Component {
 
   render () {
     const { date, time, datePickerVisible, timePickerVisible } = this.state
-    console.log(timePickerVisible)
+
     return (
       <ScrollView style={styles.container}>
         <Input
-          value={date.toString()}
+          value={moment(date).format('D.M.YYYY')}
           onFocus={this.openDatePicker}
           placeholder='Choose a date'
           marginVertical={10}

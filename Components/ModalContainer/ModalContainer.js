@@ -28,9 +28,9 @@ export default class ModalContainer extends PureComponent {
     return (
       <Modal
         animationType='fade'
-        transparent
         visible={visible}
         onRequestClose={onRequestClose}
+        transparent
       >
         <View style={[styles.modalOuterContainer, {backgroundColor: modalBgColor}]}>
           <View style={[modalStyle, customModalStyle]}>
