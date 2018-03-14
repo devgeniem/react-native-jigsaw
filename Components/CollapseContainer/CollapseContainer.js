@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { View, Animated, Easing } from 'react-native'
 import styles from './Styles'
 
-export default class CollapseContainer extends Component {
+export default class CollapseContainer extends PureComponent {
   constructor (props) {
     super(props)
     const animatedValueInit = props.visible ? 1 : 0
@@ -58,9 +58,13 @@ export default class CollapseContainer extends Component {
       inputRange: [0, 0.999999, 1],
       outputRange: [0, this.state.maxHeight, 'auto'] // Use 'auto' as final value to enable container expanding
     })
+    const opacity = this.animatedValue.interpolate({
+      inputRange: [0, 0.000001],
+      outputRange: [0, 1]
+    })
 
     return (
-      <Animated.View style={[{maxHeight}, styles.container]}>
+      <Animated.View style={[{maxHeight, opacity}, styles.container]}>
         <Animated.View style={style}>
           {this.props.children}
         </Animated.View>
