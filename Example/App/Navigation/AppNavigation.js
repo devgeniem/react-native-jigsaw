@@ -3,6 +3,7 @@ import LaunchScreen from '../Containers/LaunchScreen'
 import ButtonScreen from '../Containers/ButtonScreen'
 import CheckBoxScreen from '../Containers/CheckBoxScreen'
 import InputScreen from '../Containers/InputScreen'
+import DateTimeScreen from '../Containers/DateTimeScreen'
 import CollapseScreen from '../Containers/CollapseScreen'
 import ModalScreen from '../Containers/ModalScreen'
 
@@ -12,6 +13,7 @@ const PrimaryNav = StackNavigator({
   ButtonScreen: { screen: ButtonScreen },
   CheckBoxScreen: { screen: CheckBoxScreen },
   InputScreen: { screen: InputScreen },
+  DateTimeScreen: { screen: DateTimeScreen },
   CollapseScreen: { screen: CollapseScreen },
   ModalScreen: { screen: ModalScreen }
 }, {

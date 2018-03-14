@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { View, TextInput, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import styles from './Styles'
 import { Colors } from '../../Themes'
@@ -76,7 +76,7 @@ export default class NumericInput extends PureComponent {
   handleHoldUp = () => {
     this.handleUpPress()
     this.timerSpeed = Math.max(this.timerSpeed - 100, 10)
-    this.timerUp = setTimeout(this.handleHoldUp, this.timerSpeed);
+    this.timerUp = setTimeout(this.handleHoldUp, this.timerSpeed)
   }
 
   handleHoldDown = () => {
@@ -92,7 +92,7 @@ export default class NumericInput extends PureComponent {
     let newText = text.replace(/[^0-9.,-]/g, '').replace(/,/g, '.')
 
     // Remove dots in integer mode
-    if ( integer ) {
+    if (integer) {
       newText = newText.replace(/\./g, '')
     } else {
       // Remove all but first dot

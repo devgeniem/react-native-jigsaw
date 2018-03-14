@@ -5,7 +5,7 @@ import styles from './Styles'
 
 export default class ModalContainer extends PureComponent {
   getCustomModalStyle = () => {
-    const { width, height, borderRadius, borderWidth, borderColor, backgroundColor, margin, padding } = this.props
+    const { width, height, borderRadius, borderWidth, borderColor, backgroundColor, padding } = this.props
     const customStyles = {
       ...(width ? {width} : {}),
       ...(height ? {height} : {}),

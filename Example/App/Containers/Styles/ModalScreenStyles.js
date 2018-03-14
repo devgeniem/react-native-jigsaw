@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native'
-import { Colors } from '../../Themes'
 
 export default StyleSheet.create({
   container: {
@@ -8,7 +7,6 @@ export default StyleSheet.create({
     padding: 15,
     paddingVertical: 30
   },
-
   modalTitle: {
     fontSize: 24,
     marginVertical: 8
@@ -21,5 +19,4 @@ export default StyleSheet.create({
     marginTop: 16,
     flexDirection: 'row'
   }
-
 })
