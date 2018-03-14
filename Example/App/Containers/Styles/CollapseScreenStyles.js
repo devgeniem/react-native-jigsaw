@@ -13,15 +13,6 @@ export default StyleSheet.create({
     marginTop: 12,
     marginBottom: 8
   },
-  header: {
-    backgroundColor: Colors.violet,
-    padding: 12,
-    marginTop: 8
-  },
-  headerText: {
-    color: 'white',
-    fontSize: 18
-  },
   heading: {
     marginTop: 12,
     marginBottom: 6,
@@ -38,5 +29,8 @@ export default StyleSheet.create({
     paddingHorizontal: 8,
     paddingTop: 4,
     paddingBottom: 16
+  },
+  spacer: {
+    height: 10
   }
 })

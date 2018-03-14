@@ -12,6 +12,7 @@ export default class LaunchScreen extends Component {
   toDateTime = () => this.props.navigation.navigate('DateTimeScreen')
   toInput = () => this.props.navigation.navigate('InputScreen')
   toCollapse = () => this.props.navigation.navigate('CollapseScreen')
+  toModal = () => this.props.navigation.navigate('ModalScreen')
   toAutoHide = () => this.props.navigation.navigate('AutoHideHeaderListScreen')
 
   render () {
@@ -26,11 +27,14 @@ export default class LaunchScreen extends Component {
         <TouchableOpacity onPress={this.toInput}>
           <Text style={styles.link}>Input fields</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={this.toDateTime}>
+          <Text style={styles.link}>Native Date &amp; Time Picker</Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={this.toCollapse}>
           <Text style={styles.link}>CollapseContainer</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.toDateTime}>
-          <Text style={styles.link}>Native Date & Time Picker</Text>
+        <TouchableOpacity onPress={this.toModal}>
+          <Text style={styles.link}>ModalContainer</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={this.toAutoHide}>
           <Text style={styles.link}>AutoHideHeaderList</Text>

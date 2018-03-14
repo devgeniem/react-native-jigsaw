@@ -3,6 +3,7 @@ const colors = {
   white: '#ffffff',
   black: '#000000',
   transparent: 'rgba(0,0,0,0)',
+  overlayBg: 'rgba(0, 0, 0, 0.5)',
   grey: '#aaa',
   violet: '#780076',
   primaryUnderlay: '#540052',

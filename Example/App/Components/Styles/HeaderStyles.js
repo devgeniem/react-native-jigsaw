@@ -9,6 +9,11 @@ export default StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    left: 20
+    top: 0,
+    bottom: 0,
+    left: 0,
+    width: 56,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
