@@ -6,15 +6,13 @@ export default StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%',
-    zIndex: 1000
+    width: '100%'
   },
   labelStyle: {
     paddingVertical: 12,
     fontSize: 18,
     color: Colors.violet,
-    backgroundColor: Colors.transparent,
-    zIndex: 1000
+    backgroundColor: Colors.transparent
   },
   listStyle: {
     alignSelf: 'center',
@@ -22,8 +20,8 @@ export default StyleSheet.create({
     borderWidth: 2,
     borderTopWidth: 0,
     borderColor: Colors.violet,
+    backgroundColor: Colors.white,
     position: 'absolute',
-    top: 50,
     zIndex: 1000
   },
   separator: {

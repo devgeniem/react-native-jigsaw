@@ -43,7 +43,6 @@ export default class DropdownScreen extends Component {
       text={this.state.selected}
       onPress={this.onPress}
       fontSize={14}
-      margin={10}
       width='80%'
       rightIcon={<Icon name='ios-arrow-down-outline' size={24} color={Colors.white} style={styles.rightIcon} />}
     />

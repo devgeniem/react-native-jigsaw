@@ -77,7 +77,9 @@ export default class DropdownPicker extends PureComponent {
     return (
       <View>
         { this.props.component }
-        { this.renderItems() }
+        <View>
+          { this.renderItems() }
+        </View>
       </View>
     )
   }
