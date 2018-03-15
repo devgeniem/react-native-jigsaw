@@ -14,6 +14,7 @@ export default class LaunchScreen extends Component {
   toCollapse = () => this.props.navigation.navigate('CollapseScreen')
   toModal = () => this.props.navigation.navigate('ModalScreen')
   toAutoHide = () => this.props.navigation.navigate('AutoHideHeaderListScreen')
+  toDropdown = () => this.props.navigation.navigate('DropdownScreen')
 
   render () {
     return (
@@ -38,6 +39,9 @@ export default class LaunchScreen extends Component {
         </TouchableOpacity>
         <TouchableOpacity onPress={this.toAutoHide}>
           <Text style={styles.link}>AutoHideHeaderList</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.toDropdown}>
+          <Text style={styles.link}>Dropdown</Text>
         </TouchableOpacity>
       </ScrollView>
     )

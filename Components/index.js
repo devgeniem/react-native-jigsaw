@@ -7,6 +7,7 @@ import DateTimePicker from './DateTimePicker/DateTimePicker'
 import CollapseContainer from './CollapseContainer/CollapseContainer'
 import ModalContainer from './ModalContainer/ModalContainer'
 import AutoHideHeaderList from './AutoHideHeaderList/AutoHideHeaderList'
+import DropdownPicker from './DropdownPicker/DropdownPicker'
 
 export {
   Button,
@@ -17,5 +18,6 @@ export {
   DateTimePicker,
   CollapseContainer,
   ModalContainer,
-  AutoHideHeaderList
+  AutoHideHeaderList,
+  DropdownPicker
 }
