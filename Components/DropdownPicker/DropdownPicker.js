@@ -29,17 +29,14 @@ export default class DropdownPicker extends PureComponent {
   keyExtractor = (item, index) => index.toString()
 
   renderItem = ({item, index}) => {
-    const { itemStyle, labelStyle, label, itemComponent, onItemPress } = this.props
-
-    if (itemComponent) return itemComponent
+    const { itemStyle, labelStyle, onValueChange } = this.props
 
     const style = itemStyle || styles.itemStyle
     const textStyle = labelStyle || styles.labelStyle
-    const text = label || `Item ${++index}`
 
     return (
-      <TouchableOpacity style={style} onPress={() => onItemPress(item)}>
-        <Text style={textStyle}>{text}</Text>
+      <TouchableOpacity style={style} onPress={() => onValueChange(item.value)}>
+        <Text style={textStyle}>{item.label}</Text>
       </TouchableOpacity>
     )
   }
@@ -49,7 +46,7 @@ export default class DropdownPicker extends PureComponent {
   }
 
   renderItems = () => {
-    const { visible, listStyle } = this.props
+    const { visible, listStyle, items } = this.props
     if (visible) {
       const style = listStyle || styles.listStyle
       const dropdownHeight = this.props.dropdownHeight || 208
@@ -71,6 +68,7 @@ export default class DropdownPicker extends PureComponent {
           keyExtractor={this.keyExtractor}
           ItemSeparatorComponent={this.renderSeparator}
           showsVerticalScrollIndicator={false}
+          data={items}
           {...this.props}
         />
       )
