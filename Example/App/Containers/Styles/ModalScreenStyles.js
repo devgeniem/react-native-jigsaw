@@ -15,8 +15,9 @@ export default StyleSheet.create({
     fontSize: 18,
     marginVertical: 8
   },
-  buttonsContainer: {
+  buttons: {
     marginTop: 16,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 })
