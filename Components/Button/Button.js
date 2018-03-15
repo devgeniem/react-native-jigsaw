@@ -42,7 +42,6 @@ export default class Button extends React.PureComponent {
       ...(textMargin ? {margin: textMargin} : {}),
       ...(textPadding ? {padding: textPadding} : {})
     }
-    console.log(customStyles)
     return customStyles
   }
 
