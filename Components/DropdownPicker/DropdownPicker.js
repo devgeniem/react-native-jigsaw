@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { FlatList, View, Text, TouchableOpacity, Animated, Easing } from 'react-native'
+import { FlatList, View, Text, TouchableOpacity, Animated, Easing, Platform } from 'react-native'
 import styles from './Styles'
 
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList)
@@ -45,42 +45,52 @@ export default class DropdownPicker extends PureComponent {
 
   renderItems = () => {
     const { visible, listStyle, items, dropdownHeight } = this.props
-    if (visible) {
-      const style = listStyle || styles.listStyle
-      const listHeight = dropdownHeight || 208
 
-      /* Use animated height and opacity changes */
-      const height = this.animatedValue.interpolate({
-        inputRange: [0, 0.75],
-        outputRange: [0, listHeight] // Use 'auto' as final value to enable container expanding
-      })
-      const opacity = this.animatedValue.interpolate({
-        inputRange: [0, 0.000001],
-        outputRange: [0, 1]
-      })
+    const style = listStyle || styles.listStyle
+    const listHeight = dropdownHeight || 208
 
-      return (
-        <AnimatedFlatList
-          style={[style, {height, opacity}]}
-          renderItem={this.renderItem}
-          keyExtractor={this.keyExtractor}
-          ItemSeparatorComponent={this.renderSeparator}
-          showsVerticalScrollIndicator={false}
-          data={items}
-          {...this.props}
-        />
-      )
-    }
+    /* Use animated height and opacity changes */
+    const height = this.animatedValue.interpolate({
+      inputRange: [0, 0.75],
+      outputRange: [0, listHeight] // Use 'auto' as final value to enable container expanding
+    })
+    const opacity = this.animatedValue.interpolate({
+      inputRange: [0, 0.000001],
+      outputRange: [0, 1]
+    })
+
+    return (
+      <AnimatedFlatList
+        style={[style, {height, opacity}]}
+        renderItem={this.renderItem}
+        keyExtractor={this.keyExtractor}
+        ItemSeparatorComponent={this.renderSeparator}
+        showsVerticalScrollIndicator={false}
+        data={items}
+        {...this.props}
+      />
+    )
   }
 
-  render () {
-    return (
+  renderIOS = () => (
+    <View style={{zIndex: this.props.visible ? 1000 : 0}}>
+      { this.props.component }
       <View>
-        { this.props.component }
-        <View>
-          { this.renderItems() }
-        </View>
+        { this.renderItems() }
       </View>
-    )
+    </View>
+  )
+
+  renderAndroid = () => (
+    <View>
+      { this.props.component }
+      <View>
+        { this.renderItems() }
+      </View>
+    </View>
+  )
+
+  render () {
+    return Platform.OS === 'ios' ? this.renderIOS() : this.renderAndroid()
   }
 }
