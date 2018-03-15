@@ -15,5 +15,9 @@ export default StyleSheet.create({
     alignSelf: 'center',
     zIndex: 2,
     backgroundColor: Colors.transparent
+  },
+  separator: {
+    height: 1,
+    backgroundColor: Colors.placeholderColor
   }
 })

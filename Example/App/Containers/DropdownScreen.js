@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, TouchableOpacity, View, Text } from 'react-native'
+import { ScrollView, View } from 'react-native'
 import { Button, DropdownPicker } from '../../../Components'
 import Header from '../Components/Header'
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -40,6 +40,7 @@ export default class DropdownScreen extends Component {
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
           visible={this.state.visible}
           onItemPress={this.pick}
+          separatorComponent={<View style={styles.separator} />}
         />
       </ScrollView>
     )
