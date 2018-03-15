@@ -25,14 +25,14 @@ export default class ModalScreen extends Component {
       <View style={styles.buttons}>
         <Button
           onPress={this.toggleModal}
-          text={'Cancel'}
+          text='Cancel'
+          width='45%'
           secondary
-          width={'45%'}
         />
         <Button
           onPress={this.toggleModal}
-          text={'OK'}
-          width={'45%'}
+          text='OK'
+          width='45%'
         />
       </View>
     </View>
@@ -45,7 +45,7 @@ export default class ModalScreen extends Component {
       <ScrollView style={styles.container}>
         <Button
           onPress={this.toggleModal}
-          text={'Open Modal'}
+          text='Open Modal'
         />
 
         <ModalContainer
