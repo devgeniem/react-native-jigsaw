@@ -11,7 +11,8 @@ export default StyleSheet.create({
   },
   labelStyle: {
     fontSize: 18,
-    color: Colors.violet
+    color: Colors.violet,
+    backgroundColor: Colors.transparent
   },
   listStyle: {
     alignSelf: 'center',

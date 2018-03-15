@@ -31,7 +31,7 @@ export default class CollapseScreen extends Component {
 
   render () {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.container} contentContainerStyle={styles.innerContainer}>
         <Text style={styles.title}>CollapseContainer</Text>
         <Button onPress={this.toggleA} width={'100%'} text='Click to toggle' />
         <CollapseContainer visible={this.state.visibleA} style={styles.contentContainer}>
