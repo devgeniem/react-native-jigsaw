@@ -63,7 +63,6 @@ export default class DropdownScreen extends Component {
           onValueChange={this.pick}
           separatorComponent={this.renderSeparator()}
         />
-        { this.renderButton() }
       </ScrollView>
     )
   }

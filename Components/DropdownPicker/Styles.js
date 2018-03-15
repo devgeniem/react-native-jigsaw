@@ -12,7 +12,8 @@ export default StyleSheet.create({
     paddingVertical: 12,
     fontSize: 18,
     color: Colors.violet,
-    backgroundColor: Colors.transparent
+    backgroundColor: Colors.transparent,
+    paddingHorizontal: 8
   },
   listStyle: {
     alignSelf: 'center',
