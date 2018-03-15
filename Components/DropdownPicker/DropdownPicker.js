@@ -41,20 +41,18 @@ export default class DropdownPicker extends PureComponent {
     )
   }
 
-  renderSeparator = () => {
-    return this.props.separatorComponent || <View style={styles.separator} />
-  }
+  renderSeparator = () => this.props.separatorComponent || <View style={styles.separator} />
 
   renderItems = () => {
-    const { visible, listStyle, items } = this.props
+    const { visible, listStyle, items, dropdownHeight } = this.props
     if (visible) {
       const style = listStyle || styles.listStyle
-      const dropdownHeight = this.props.dropdownHeight || 208
+      const listHeight = dropdownHeight || 208
 
       /* Use animated height and opacity changes */
       const height = this.animatedValue.interpolate({
         inputRange: [0, 0.75],
-        outputRange: [0, dropdownHeight] // Use 'auto' as final value to enable container expanding
+        outputRange: [0, listHeight] // Use 'auto' as final value to enable container expanding
       })
       const opacity = this.animatedValue.interpolate({
         inputRange: [0, 0.000001],

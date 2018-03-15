@@ -3,10 +3,12 @@ import { Colors } from '../../Themes'
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
     padding: 15,
     paddingVertical: 30
+  },
+  contentContainer: {
+    flex: 1
   },
   rightIcon: {
     right: 16,

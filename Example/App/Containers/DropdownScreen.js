@@ -43,24 +43,28 @@ export default class DropdownScreen extends Component {
       text={this.state.selected}
       onPress={this.onPress}
       fontSize={14}
+      margin={10}
       width='80%'
       rightIcon={<Icon name='ios-arrow-down-outline' size={24} color={Colors.white} style={styles.rightIcon} />}
     />
   )
+
+  renderSeparator = () => <View style={styles.separator} />
 
   onPress = () => this.setState({ visible: !this.state.visible })
   pick = (value) => this.setState({ selected: ITEMS[value].label, visible: false })
 
   render () {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} bounces={false}>
         <DropdownPicker
           component={this.renderButton()}
           items={ITEMS}
           visible={this.state.visible}
           onValueChange={this.pick}
-          separatorComponent={<View style={styles.separator} />}
+          separatorComponent={this.renderSeparator()}
         />
+        { this.renderButton() }
       </ScrollView>
     )
   }

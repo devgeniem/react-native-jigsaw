@@ -4,7 +4,7 @@ import { Colors } from '../../Themes'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   contentContainer: {
     padding: 15
