@@ -44,7 +44,7 @@ export default class DropdownPicker extends PureComponent {
   renderSeparator = () => this.props.separatorComponent || <View style={styles.separator} />
 
   renderItems = () => {
-    const { visible, listStyle, items, dropdownHeight } = this.props
+    const { listStyle, items, dropdownHeight } = this.props
 
     const style = listStyle || styles.listStyle
     const listHeight = dropdownHeight || 208
