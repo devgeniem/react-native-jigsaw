@@ -49,7 +49,7 @@ export default class DropdownScreen extends Component {
   )
 
   onPress = () => this.setState({ visible: !this.state.visible })
-  pick = (item) => this.setState({ selected: item.toString(), visible: false })
+  pick = (value) => this.setState({ selected: ITEMS[value].label, visible: false })
 
   render () {
     return (

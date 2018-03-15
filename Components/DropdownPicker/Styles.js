@@ -6,10 +6,10 @@ export default StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 45,
-    width: '80%'
+    width: '100%'
   },
   labelStyle: {
+    paddingVertical: 12,
     fontSize: 18,
     color: Colors.violet,
     backgroundColor: Colors.transparent

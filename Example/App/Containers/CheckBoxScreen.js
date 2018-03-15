@@ -58,7 +58,7 @@ export default class CheckBoxScreen extends Component {
           <CheckBox
             checked={this.state.check2}
             onPress={this.toggleCheck2}
-            color={'#00f'}
+            color='#00f'
             renderCheck={this.renderCustomCheck}
           />
           <Text style={styles.label}>Custom check</Text>
@@ -68,7 +68,7 @@ export default class CheckBoxScreen extends Component {
           <CheckBox
             checked={this.state.check4}
             onPress={this.toggleCheck4}
-            color={'#cc4400'}
+            color='#cc4400'
             size={48}
           />
           <Text style={styles.label}>Custom size</Text>

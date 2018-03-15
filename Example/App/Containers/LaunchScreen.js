@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, TouchableOpacity } from 'react-native'
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import styles from './Styles/LaunchScreenStyles'
 
 export default class LaunchScreen extends Component {
@@ -17,37 +17,46 @@ export default class LaunchScreen extends Component {
   toAutoHide = () => this.props.navigation.navigate('AutoHideHeaderListScreen')
   toDropdown = () => this.props.navigation.navigate('DropdownScreen')
 
+  renderHeader = () => (
+    <View style={styles.header}>
+      <Text style={styles.title}>React Native Jigsaw Example</Text>
+    </View>
+  )
+
   render () {
     return (
-      <ScrollView style={styles.container}>
-        <TouchableOpacity onPress={this.toButton}>
-          <Text style={styles.link}>Button</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.toCheckBox}>
-          <Text style={styles.link}>CheckBox &amp; RadioButton</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.toInput}>
-          <Text style={styles.link}>Input fields</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.toPicker}>
-          <Text style={styles.link}>Picker</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.toDateTime}>
-          <Text style={styles.link}>Native Date &amp; Time Picker</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.toCollapse}>
-          <Text style={styles.link}>CollapseContainer</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.toModal}>
-          <Text style={styles.link}>ModalContainer</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.toAutoHide}>
-          <Text style={styles.link}>AutoHideHeaderList</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.toDropdown}>
-          <Text style={styles.link}>Dropdown</Text>
-        </TouchableOpacity>
-      </ScrollView>
+      <View style={styles.container}>
+        { this.renderHeader() }
+        <ScrollView style={styles.contentContainer}>
+          <TouchableOpacity onPress={this.toButton}>
+            <Text style={styles.link}>Button</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toCheckBox}>
+            <Text style={styles.link}>CheckBox &amp; RadioButton</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toInput}>
+            <Text style={styles.link}>Input fields</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toPicker}>
+            <Text style={styles.link}>Picker</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toDateTime}>
+            <Text style={styles.link}>DateTimePicker</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toCollapse}>
+            <Text style={styles.link}>CollapseContainer</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toModal}>
+            <Text style={styles.link}>ModalContainer</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toAutoHide}>
+            <Text style={styles.link}>AutoHideHeaderList</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toDropdown}>
+            <Text style={styles.link}>DropdownPicker</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </View>
     )
   }
 }

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { Colors } from '../../Themes'
 
 export default StyleSheet.create({
   container: {
@@ -7,9 +8,10 @@ export default StyleSheet.create({
     padding: 15
   },
   title: {
-    fontSize: 32,
+    fontSize: 20,
     marginTop: 12,
-    marginBottom: 8
+    marginBottom: 8,
+    color: Colors.violet
   },
   row: {
     paddingVertical: 4,
@@ -17,8 +19,9 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   label: {
-    marginLeft: 12,
-    fontSize: 20
+    marginLeft: 8,
+    fontSize: 16,
+    color: Colors.violet
   },
 
   customCheck: {
