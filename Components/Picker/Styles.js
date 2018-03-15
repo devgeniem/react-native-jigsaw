@@ -7,9 +7,6 @@ export default StyleSheet.create({
     width: '90%',
     backgroundColor: Colors.white
   },
-  listAndroid: {
-    paddingVertical: 8
-  },
   pickerItemAndroid: {
     padding: 16
   },
@@ -21,5 +18,8 @@ export default StyleSheet.create({
     margin: 12,
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  spacer: {
+    height: 8
   }
 })

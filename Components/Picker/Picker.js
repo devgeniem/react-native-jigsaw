@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { View, Platform, Picker, TouchableNativeFeedback, Text, ScrollView } from 'react-native'
+import { View, Platform, Picker, TouchableNativeFeedback, Text, FlatList } from 'react-native'
 import ModalContainer from '../ModalContainer/ModalContainer'
 import Button from '../Button/Button'
 import styles from './Styles'
@@ -63,8 +63,8 @@ export default class JigsawPicker extends PureComponent {
     )
   }
 
-  renderPickerItemsAndroid = () => this.props.items.map((item, index) => {
-    /* Handle press event and close modal */
+  renderPickerItemAndroid = ({item, index}) => {
+    /* Handle item press and close modal */
     const handleItemPress = () => {
       this.props.onValueChange(item.value)
       this.props.closePicker()
@@ -81,13 +81,20 @@ export default class JigsawPicker extends PureComponent {
         </View>
       </TouchableNativeFeedback>
     )
-  })
+  }
+
+  extractKey = (item, index) => index.toString()
+  renderSpacer = () => <View style={styles.spacer} />
 
   renderPickerAndroid = () => {
     return (
-      <ScrollView style={styles.listAndroid}>
-        {this.renderPickerItemsAndroid()}
-      </ScrollView>
+      <FlatList
+        data={this.props.items}
+        renderItem={this.renderPickerItemAndroid}
+        keyExtractor={this.extractKey}
+        ListHeaderComponent={this.renderSpacer}
+        ListFooterComponent={this.renderSpacer}
+      />
     )
   }
 
