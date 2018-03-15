@@ -19,7 +19,11 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
+  buttonContainer: {
+    flex: 1
+  },
   spacer: {
-    height: 8
+    height: 8,
+    width: 8
   }
 })

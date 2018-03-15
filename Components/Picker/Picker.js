@@ -38,8 +38,13 @@ export default class JigsawPicker extends PureComponent {
 
     return (
       <View style={styles.buttons}>
-        <Button onPress={closePicker} text='Cancel' width='45%' secondary />
-        <Button onPress={this.acceptChangeIOS} text='OK' width='45%' />
+        <View style={styles.buttonContainer}>
+          <Button onPress={closePicker} text='Cancel' width='100%' secondary />
+        </View>
+        <View style={styles.spacer} />
+        <View style={styles.buttonContainer}>
+          <Button onPress={this.acceptChangeIOS} text='OK' width='100%' />
+        </View>
       </View>
     )
   }
