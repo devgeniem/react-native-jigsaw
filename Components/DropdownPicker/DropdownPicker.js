@@ -14,7 +14,7 @@ export default class DropdownPicker extends PureComponent {
   componentWillReceiveProps (nextProps) {
     /* Start animation when component receives next props. */
     const nextVal = nextProps.visible ? 1 : 0
-    const duration = nextProps.animationDuration != null ? nextProps.animationDuration : 100
+    const duration = nextProps.animationDuration ? nextProps.animationDuration : 100
 
     Animated.timing(
       this.animatedValue,
@@ -36,7 +36,7 @@ export default class DropdownPicker extends PureComponent {
 
     return (
       <TouchableOpacity style={style} onPress={() => onValueChange(item.value)}>
-        <Text style={textStyle}>{item.label}</Text>
+        <Text numberOfLines={1} style={textStyle}>{item.label}</Text>
       </TouchableOpacity>
     )
   }
@@ -66,31 +66,23 @@ export default class DropdownPicker extends PureComponent {
         keyExtractor={this.keyExtractor}
         ItemSeparatorComponent={this.renderSeparator}
         showsVerticalScrollIndicator={false}
+        bounces={false}
         data={items}
         {...this.props}
       />
     )
   }
 
-  renderIOS = () => (
-    <View style={{zIndex: this.props.visible ? 1000 : 0}}>
-      { this.props.component }
-      <View>
-        { this.renderItems() }
-      </View>
-    </View>
-  )
-
-  renderAndroid = () => (
-    <View>
-      { this.props.component }
-      <View>
-        { this.renderItems() }
-      </View>
-    </View>
-  )
+  getStyle = () => Platform.OS === 'ios' ? { zIndex: this.props.visible ? 1000 : 0 } : null
 
   render () {
-    return Platform.OS === 'ios' ? this.renderIOS() : this.renderAndroid()
+    return (
+      <View style={this.getStyle()}>
+        { this.props.component }
+        <View>
+          { this.renderItems() }
+        </View>
+      </View>
+    )
   }
 }
