@@ -53,7 +53,7 @@ export default class PickerScreen extends Component {
           value={pickerValue != null ? ITEMS[pickerValue].label : null}
           onFocus={this.togglePicker}
           placeholder='Select value...'
-          rightContent={<Icon name='ios-arrow-down' size={24} color={Colors.violet} style={styles.rightIcon} />}
+          rightContent={<Icon name='ios-arrow-down' size={24} color={Colors.violet} style={styles.rightIcon} pointerEvents='none' />}
         />
         <Picker
           items={ITEMS}

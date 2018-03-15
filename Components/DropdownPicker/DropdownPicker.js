@@ -15,7 +15,7 @@ export default class DropdownPicker extends PureComponent {
   componentWillReceiveProps (nextProps) {
     /* Start animation when component receives next props. */
     const nextVal = nextProps.visible ? 1 : 0
-    const duration = nextProps.animationDuration != null ? nextProps.animationDuration : 150
+    const duration = nextProps.animationDuration != null ? nextProps.animationDuration : 100
 
     Animated.timing(
       this.animatedValue,

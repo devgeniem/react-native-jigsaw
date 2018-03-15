@@ -40,7 +40,7 @@ export default class InputScreen extends Component {
           placeholder='Icon input'
           marginVertical={10}
           paddingLeft={45}
-          leftContent={<Icon name='md-checkmark' size={24} color='green' style={styles.leftIcon} />}
+          leftContent={<Icon name='md-checkmark' size={24} color='green' style={styles.leftIcon} pointerEvents='none' />}
         />
         <Input
           value={this.state.multilineInputValue}
