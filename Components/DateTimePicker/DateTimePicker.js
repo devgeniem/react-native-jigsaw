@@ -61,6 +61,27 @@ export default class DateTimePicker extends React.PureComponent {
     }
   }
 
+  renderIosButtons = () => {
+    const { closePicker, renderIosContent, leftText, rightText } = this.props
+
+    if (renderIosContent) return renderIosContent()
+
+    const leftButtonText = leftText || 'Cancel'
+    const rightButtonText = rightText || 'OK'
+
+    return (
+      <View style={styles.buttons}>
+        <View style={styles.buttonContainer}>
+          <Button onPress={closePicker} text={leftButtonText} width='100%' secondary />
+        </View>
+        <View style={styles.spacer} />
+        <View style={styles.buttonContainer}>
+          <Button onPress={this.iosAcceptChange} text={rightButtonText} width='100%' />
+        </View>
+      </View>
+    )
+  }
+
   iosAcceptChange = () => {
     const { type, onChange } = this.props
     const { value } = this.state
@@ -78,15 +99,7 @@ export default class DateTimePicker extends React.PureComponent {
   renderIOS = () => (
     <ModalContainer>
       { this.renderIosPickerType() }
-      <View style={styles.buttons}>
-        <View style={styles.buttonContainer}>
-          <Button onPress={this.props.closePicker} text='Cancel' width='100%' secondary />
-        </View>
-        <View style={styles.spacer} />
-        <View style={styles.buttonContainer}>
-          <Button onPress={this.iosAcceptChange} text='OK' width='100%' />
-        </View>
-      </View>
+      { this.renderIosButtons() }
     </ModalContainer>
   )
 
