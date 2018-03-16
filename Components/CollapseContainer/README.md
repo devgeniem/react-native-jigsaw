@@ -6,7 +6,7 @@ CollapseContainer component
 Prop name         | Type      | Default | Description
 ----------------- | --------- | ------- | ------------------
 visible           | bool      | false   | Is container visible or not
-animationDuration | integer   | 250     | Animation duration in milliseconds
+animationDuration | number    | 250     | Animation duration in milliseconds
 
 ### Code example
 

@@ -5,7 +5,7 @@ ModalContainer component
 ### API
 Prop name         | Type      | Default | Description
 ----------------- | --------- | ------- | ------------------
-visible           | bool      | false   | Is container visible or not
+visible           | boolean   | false   | Is container visible or not
 overlayColor      | string    |         | Overlay background color
 onRequestClose    | function  |         | Called on hardware back button press on Android
 style             | object    |         | Modal container styles
@@ -18,7 +18,6 @@ import { ModalContainer, Button } from 'react-native-jigsaw'
 <ModalContainer
   visible={this.state.modalVisible}
   onRequestClose={this.toggleModal}
-  style={}
 >
   <Text>Hello world</Text>
   <Button onPress={this.toggleModal} text={'Close'} />

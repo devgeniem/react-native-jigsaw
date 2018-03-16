@@ -5,8 +5,8 @@ Rating component
 ### API
 Prop name        | Type      | Default | Description
 ---------------- | --------- | ------- | ------------------
-count            | integer   |         | Max number of stars
-value            | integer   |         | Current value of stars
+count            | number    |         | Max number of stars
+value            | number    |         | Current value of stars
 onValueChange    | function  |         | Gets called when user rates. Rating is passsed as a parameter.
 star             | component |         | Star component to display
 empty            | component |         | Empty component to display

@@ -7,10 +7,10 @@ Prop name         | Type      | Default | Description
 ----------------- | --------- | ------- | ------------------
 closePicker       | function  |         | Function to close picker
 items             | array     |         | Array of {label, value} items
+onValueChange     | function  |         | Function to handle value changes
 overlayColor      | string    |         | Modal overlay background color
 style             | object    |         | Modal container styles
-onValueChange     | function  |         | Function to handle value changes
-visible           | bool      | false   | Is picker visible or not
+visible           | boolean   | false   | Is picker visible or not
 
 ### Code example
 
