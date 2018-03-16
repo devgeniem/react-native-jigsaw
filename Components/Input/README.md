@@ -6,8 +6,8 @@ Input component
 Prop name         | Type      | Default   | Description
 ----------------- | --------- | --------- | ------------------------------------------------------
 inputStyle        | object    |           | Input custom styles (overrides default styles)
-leftContent       | Component |           | Component shown on left
-rightContent      | Component |           | Component shown on right
+leftContent       | component |           | Component shown on left
+rightContent      | component |           | Component shown on right
 width             | number    |           | Input width
 height            | number    |           | Input height
 borderRadius      | number    |           | Input border radius
