@@ -16,8 +16,8 @@ rippleColor      | string    | 'white'   | Ripple color (Android)
 onPress          | function  |           | onPress function
 buttonStyle      | object    |           | Button custom styles (overrides default styles)
 textStyle        | object    |           | Text custom styles (overrides default styles)
-leftIcon         | Component |           | Component shown on left
-rightIcon        | Component |           | Component shown on right
+leftIcon         | component |           | Component shown on left
+rightIcon        | component |           | Component shown on right
 width            | number    |           | Button width
 height           | number    |           | Button height
 borderRadius     | number    |           | Button border radius

@@ -144,12 +144,12 @@ export default class NumericInput extends PureComponent {
     const { text } = this.state
     return (
       <Input
-        {...this.props}
         value={text}
         onChangeText={this.handleTextChange}
         keyboardType='numbers-and-punctuation'
         onBlur={this.handleBlur}
         rightContent={this.renderButtons()}
+        {...this.props}
       />
     )
   }
