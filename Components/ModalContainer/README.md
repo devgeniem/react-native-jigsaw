@@ -20,6 +20,6 @@ import { ModalContainer, Button } from 'react-native-jigsaw'
   onRequestClose={this.toggleModal}
 >
   <Text>Hello world</Text>
-  <Button onPress={this.toggleModal} text={'Close'} />
+  <Button onPress={this.toggleModal} text='Close' />
 </ModalContainer>
 ```
