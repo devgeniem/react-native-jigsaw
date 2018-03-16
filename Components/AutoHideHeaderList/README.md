@@ -1,6 +1,6 @@
 Back to [react-native-jigsaw](../../README.md)
 
-AutoHideHeaderContainer component
+AutoHideHeaderList component
 ================
 ### API
 Prop name        | Type      | Default   | Description
