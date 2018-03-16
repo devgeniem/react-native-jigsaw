@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import { View } from 'react-native'
 import CheckBox from '../CheckBox/CheckBox'
-import styles from './Styles'
 import { Colors } from '../../Themes'
+import styles from './Styles'
 
 const DEFAULT_SIZE = 32
 const DEFAULT_COLOR = Colors.default
@@ -19,9 +19,7 @@ export default class RadioButton extends PureComponent {
       borderRadius: Math.round(checkSize * 0.5)
     }
 
-    return (
-      <View style={checkStyle} />
-    )
+    return <View style={checkStyle} />
   }
 
   render () {

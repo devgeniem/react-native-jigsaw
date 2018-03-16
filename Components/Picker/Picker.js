@@ -32,9 +32,7 @@ export default class JigsawPicker extends PureComponent {
     const { closePicker, renderButtonsIOS } = this.props
 
     // Use custom buttons
-    if (renderButtonsIOS) {
-      return renderButtonsIOS(this.acceptChangeIOS, closePicker)
-    }
+    if (renderButtonsIOS) return renderButtonsIOS(this.acceptChangeIOS, closePicker)
 
     return (
       <View style={styles.buttons}>
@@ -55,10 +53,7 @@ export default class JigsawPicker extends PureComponent {
 
     return (
       <View>
-        <Picker
-          selectedValue={pickerValue}
-          onValueChange={this.handleValueChangeIOS}
-        >
+        <Picker selectedValue={pickerValue} onValueChange={this.handleValueChangeIOS}>
           {items.map(({label, value}, index) => (
             <Picker.Item key={index} label={label} value={value} />
           ))}
@@ -115,7 +110,7 @@ export default class JigsawPicker extends PureComponent {
         style={platformStyles}
         overlayColor={overlayColor}
       >
-        {this.renderPicker()}
+        { this.renderPicker() }
       </ModalContainer>
     )
   }

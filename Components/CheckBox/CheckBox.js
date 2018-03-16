@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import { View, TouchableOpacity, Animated, Easing } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import styles from './Styles'
 import { Colors } from '../../Themes'
+import styles from './Styles'
 
 const DEFAULT_SIZE = 32
 const DEFAULT_COLOR = Colors.default
@@ -30,9 +30,7 @@ export default class CheckBox extends PureComponent {
   renderCheckIcon = () => {
     const { renderCheck, color, size, invert } = this.props
     /* Render custom check component if provided */
-    if (renderCheck) {
-      return renderCheck()
-    }
+    if (renderCheck) return renderCheck()
 
     const checkSize = Math.floor(0.8 * (size || DEFAULT_SIZE))
     const checkColor = invert ? Colors.white : (color || DEFAULT_COLOR)

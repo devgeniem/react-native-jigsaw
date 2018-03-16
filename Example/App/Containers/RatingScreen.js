@@ -20,7 +20,6 @@ export default class RatingScreen extends Component {
 
   setStars = (value) => this.setState({ stars: value })
   setHearts = (value) => this.setState({ hearts: value })
-  setFootballs = (value) => this.setState({ footballs: value })
 
   render () {
     const { stars, hearts } = this.state

@@ -18,7 +18,6 @@ export default class CheckBoxScreen extends Component {
       check2: false,
       check3: false,
       check4: false,
-
       radioButtonIndex: null
     }
   }
@@ -30,9 +29,7 @@ export default class CheckBoxScreen extends Component {
 
   setRadioButtonIndex = (index) => this.setState({ radioButtonIndex: index })
 
-  renderCustomCheck = () => {
-    return <View style={styles.customCheck} />
-  }
+  renderCustomCheck = () => <View style={styles.customCheck} />
 
   renderCheckBoxes = () => {
     return (

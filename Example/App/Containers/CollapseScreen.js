@@ -17,8 +17,8 @@ export default class CollapseScreen extends Component {
     }
   }
 
-  toggleA = () => this.setState({visibleA: !this.state.visibleA})
-  toggleB = () => this.setState({visibleB: !this.state.visibleB})
+  toggleA = () => this.setState({ visibleA: !this.state.visibleA })
+  toggleB = () => this.setState({ visibleB: !this.state.visibleB })
 
   renderExampleContent = () => (
     <View>
@@ -33,12 +33,12 @@ export default class CollapseScreen extends Component {
     return (
       <ScrollView style={styles.container} contentContainerStyle={styles.innerContainer}>
         <Text style={styles.title}>CollapseContainer</Text>
-        <Button onPress={this.toggleA} width={'100%'} text='Click to toggle' />
+        <Button onPress={this.toggleA} width='100%' text='Click to toggle' />
         <CollapseContainer visible={this.state.visibleA} style={styles.contentContainer}>
           {this.renderExampleContent()}
         </CollapseContainer>
         <View style={styles.spacer} />
-        <Button onPress={this.toggleB} width={'100%'} text='With fast animation' />
+        <Button onPress={this.toggleB} width='100%' text='With fast animation' />
         <CollapseContainer visible={this.state.visibleB} animationDuration={100} style={styles.contentContainer}>
           {this.renderExampleContent()}
         </CollapseContainer>

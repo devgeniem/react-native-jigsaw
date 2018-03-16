@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import styles from './Styles'
-import { Colors } from '../../Themes'
 import Input from '../Input/Input'
+import { Colors } from '../../Themes'
+import styles from './Styles'
 
 const DEFAULT_COLOR = Colors.default
 
@@ -27,9 +27,7 @@ export default class NumericInput extends PureComponent {
 
   increaseStepMultiplier = () => {
     const { stepMultiplier } = this.state
-    this.setState({
-      stepMultiplier: stepMultiplier + 1
-    })
+    this.setState({ stepMultiplier: stepMultiplier + 1 })
   }
 
   stopTimers = () => {
@@ -38,16 +36,12 @@ export default class NumericInput extends PureComponent {
     this.timerSpeed = 500
 
     // Reset step multiplier
-    this.setState({
-      stepMultiplier: 1
-    })
+    this.setState({ stepMultiplier: 1 })
   }
 
   componentWillUpdate (nextProps, nextState) {
     if (nextProps.value !== this.props.value) {
-      this.setState({
-        text: (nextProps.value != null) ? nextProps.value.toString() : ''
-      })
+      this.setState({ text: (nextProps.value != null) ? nextProps.value.toString() : '' })
     }
   }
 
@@ -125,7 +119,7 @@ export default class NumericInput extends PureComponent {
     }
 
     // Only update internal state. Actual prop will update on blur.
-    this.setState({text: newText})
+    this.setState({ text: newText })
   }
 
   /* Handle input focus blur */

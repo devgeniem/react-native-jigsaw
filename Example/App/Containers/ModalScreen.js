@@ -16,7 +16,7 @@ export default class ModalScreen extends Component {
     }
   }
 
-  toggleModal = () => this.setState({modalVisible: !this.state.modalVisible})
+  toggleModal = () => this.setState({ modalVisible: !this.state.modalVisible })
 
   renderModalContent = () => (
     <View>
