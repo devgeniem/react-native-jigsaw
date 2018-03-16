@@ -62,7 +62,7 @@ export default class InputScreen extends Component {
           onValueChange={this.setNumericValue}
           step={1}
           min={-100}
-          max={100}
+          max={1000000}
           marginVertical={10}
         />
 

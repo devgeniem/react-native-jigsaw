@@ -12,7 +12,8 @@ export default class NumericInput extends PureComponent {
     super(props)
 
     this.state = {
-      text: (props.value != null) ? props.value.toString() : ''
+      text: (props.value != null) ? props.value.toString() : '',
+      stepMultiplier: 1
     }
 
     this.timerSpeed = 500
@@ -24,10 +25,22 @@ export default class NumericInput extends PureComponent {
     this.stopTimers()
   }
 
+  increaseStepMultiplier = () => {
+    const { stepMultiplier } = this.state
+    this.setState({
+      stepMultiplier: stepMultiplier + 1
+    })
+  }
+
   stopTimers = () => {
     clearTimeout(this.timerUp)
     clearTimeout(this.timerDown)
     this.timerSpeed = 500
+
+    // Reset step multiplier
+    this.setState({
+      stepMultiplier: 1
+    })
   }
 
   componentWillUpdate (nextProps, nextState) {
@@ -44,7 +57,7 @@ export default class NumericInput extends PureComponent {
     return number
   }
 
-  /* Apply min and max limits to given value */
+  /* Apply min and max limits and precision to given value */
   applyLimits = (value) => {
     const { min, max, precision } = this.props
     let limitedValue = value
@@ -60,31 +73,35 @@ export default class NumericInput extends PureComponent {
   }
 
   handleUpPress = () => {
-    const {text} = this.state
+    const { text, stepMultiplier } = this.state
     let number = this.textToFloat(text)
-    number += this.props.step || 1
+    number += stepMultiplier * (this.props.step || 1)
     number = this.applyLimits(number)
     this.props.onValueChange(number)
   }
 
   handleDownPress = () => {
-    const {text} = this.state
+    const { text, stepMultiplier } = this.state
     let number = this.textToFloat(text)
-    number -= this.props.step || 1
+    number -= stepMultiplier * (this.props.step || 1)
     number = this.applyLimits(number)
     this.props.onValueChange(number)
   }
 
   handleHoldUp = () => {
     this.handleUpPress()
+    // Increase timer speed
     this.timerSpeed = Math.max(this.timerSpeed - 100, 10)
     this.timerUp = setTimeout(this.handleHoldUp, this.timerSpeed)
+    this.increaseStepMultiplier()
   }
 
   handleHoldDown = () => {
     this.handleDownPress()
+    // Increase timer speed
     this.timerSpeed = Math.max(this.timerSpeed - 100, 10)
     this.timerDown = setTimeout(this.handleHoldDown, this.timerSpeed)
+    this.increaseStepMultiplier()
   }
 
   handleTextChange = (text) => {
