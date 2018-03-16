@@ -16,6 +16,7 @@ export default class LaunchScreen extends Component {
   toModal = () => this.props.navigation.navigate('ModalScreen')
   toAutoHide = () => this.props.navigation.navigate('AutoHideHeaderListScreen')
   toDropdown = () => this.props.navigation.navigate('DropdownScreen')
+  toRating = () => this.props.navigation.navigate('RatingScreen')
 
   renderHeader = () => (
     <View style={styles.header}>
@@ -54,6 +55,9 @@ export default class LaunchScreen extends Component {
           </TouchableOpacity>
           <TouchableOpacity onPress={this.toDropdown}>
             <Text style={styles.link}>DropdownPicker</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.toRating}>
+            <Text style={styles.link}>Rating</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>

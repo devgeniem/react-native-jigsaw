@@ -9,6 +9,7 @@ import CollapseScreen from '../Containers/CollapseScreen'
 import ModalScreen from '../Containers/ModalScreen'
 import AutoHideHeaderListScreen from '../Containers/AutoHideHeaderListScreen'
 import DropdownScreen from '../Containers/DropdownScreen'
+import RatingScreen from '../Containers/RatingScreen'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
@@ -21,7 +22,8 @@ const PrimaryNav = StackNavigator({
   CollapseScreen: { screen: CollapseScreen },
   ModalScreen: { screen: ModalScreen },
   AutoHideHeaderListScreen: { screen: AutoHideHeaderListScreen },
-  DropdownScreen: { screen: DropdownScreen }
+  DropdownScreen: { screen: DropdownScreen },
+  RatingScreen: { screen: RatingScreen }
 }, {
   // Default config for all screens
   initialRouteName: 'LaunchScreen',

@@ -46,7 +46,7 @@ export default class NumericInput extends PureComponent {
 
   /* Apply min and max limits to given value */
   applyLimits = (value) => {
-    const {min, max} = this.props
+    const { min, max, precision } = this.props
     let limitedValue = value
     if (min != null) {
       limitedValue = Math.max(min, limitedValue)
@@ -54,14 +54,16 @@ export default class NumericInput extends PureComponent {
     if (max != null) {
       limitedValue = Math.min(max, limitedValue)
     }
-    return limitedValue
+
+    // Apply precision
+    return +limitedValue.toFixed((precision || 0))
   }
 
   handleUpPress = () => {
     const {text} = this.state
     let number = this.textToFloat(text)
     number += this.props.step || 1
-    number = this.applyLimits(Math.floor(number))
+    number = this.applyLimits(number)
     this.props.onValueChange(number)
   }
 
@@ -69,7 +71,7 @@ export default class NumericInput extends PureComponent {
     const {text} = this.state
     let number = this.textToFloat(text)
     number -= this.props.step || 1
-    number = this.applyLimits(Math.ceil(number))
+    number = this.applyLimits(number)
     this.props.onValueChange(number)
   }
 
@@ -86,15 +88,12 @@ export default class NumericInput extends PureComponent {
   }
 
   handleTextChange = (text) => {
-    const { integer } = this.props
+    const { precision } = this.props
 
     // Remove invalid characters and transform commas to dots
     let newText = text.replace(/[^0-9.,-]/g, '').replace(/,/g, '.')
 
-    // Remove dots in integer mode
-    if (integer) {
-      newText = newText.replace(/\./g, '')
-    } else {
+    if (precision && precision > 0) {
       // Remove all but first dot
       newText = newText.split('.')
       newText = newText.shift() + (newText.length ? '.' + newText.join('') : '')
@@ -103,6 +102,9 @@ export default class NumericInput extends PureComponent {
       if (newText.length && newText[0] === '.') {
         newText = '0' + newText
       }
+    } else {
+      // Remove dots in integer mode
+      newText = newText.replace(/\./g, '')
     }
 
     // Only update internal state. Actual prop will update on blur.

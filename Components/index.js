@@ -9,6 +9,7 @@ import CollapseContainer from './CollapseContainer/CollapseContainer'
 import ModalContainer from './ModalContainer/ModalContainer'
 import AutoHideHeaderList from './AutoHideHeaderList/AutoHideHeaderList'
 import DropdownPicker from './DropdownPicker/DropdownPicker'
+import Rating from './Rating/Rating'
 
 export {
   Button,
@@ -21,5 +22,6 @@ export {
   CollapseContainer,
   ModalContainer,
   AutoHideHeaderList,
-  DropdownPicker
+  DropdownPicker,
+  Rating
 }
