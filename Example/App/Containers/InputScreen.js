@@ -16,7 +16,8 @@ export default class InputScreen extends Component {
       basicInputValue: '',
       multilineInputValue: '',
       iconInputValue: '',
-      numericValue: 10
+      numericValue: 10,
+      floatValue: 7.25
     }
   }
 
@@ -24,6 +25,7 @@ export default class InputScreen extends Component {
   onMultilineChangeText = (multilineInputValue) => this.setState({ multilineInputValue })
   onIconChangeText = (iconInputValue) => this.setState({ iconInputValue })
   setNumericValue = (value) => this.setState({ numericValue: value })
+  setFloatValue = (value) => this.setState({ floatValue: value })
 
   render () {
     return (
@@ -59,6 +61,16 @@ export default class InputScreen extends Component {
           value={this.state.numericValue}
           onValueChange={this.setNumericValue}
           step={1}
+          min={-100}
+          max={100}
+          marginVertical={10}
+        />
+
+        <NumericInput
+          value={this.state.floatValue}
+          onValueChange={this.setFloatValue}
+          step={0.25}
+          precision={2}
           min={-100}
           max={100}
           marginVertical={10}

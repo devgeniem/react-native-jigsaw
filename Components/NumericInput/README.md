@@ -5,11 +5,11 @@ NumericInput component
 ### API
 Prop name        | Type     | Default | Description
 ---------------- | -------- | ------- | ------------------
-onValueChange    | function |         |
+onValueChange    | function |         | Called when user has changed the value
 max              | number   |         | Maximum value
-min              | number   |         | Minimum valueste
-step             | number   |         |
-integer          | boolean  | false   | Allow only integer values
+min              | number   |         | Minimum value
+precision        | number   | 0       | Number of decimals
+step             | number   | 1       | Step for add and decrease buttons
 value            | number   |         | NumericInput value
 
 ### Code example
@@ -21,6 +21,7 @@ import { NumericInput } from 'react-native-jigsaw'
   value={this.state.value}
   onValueChange={this.setValue}
   step={1}
+  precision={0}
   min={0}
   max={100}
 />
