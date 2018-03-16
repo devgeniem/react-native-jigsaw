@@ -3,7 +3,7 @@ Back to [react-native-jigsaw](../../README.md)
 NumericInput component
 ================
 ### API
-<<<<<<< HEAD
+
 Prop name        | Type      | Default   | Description
 ---------------- | --------- | --------- | --------------------------------------------------------------
 max              | number    |           | Maximum value

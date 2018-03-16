@@ -45,7 +45,16 @@ export default class DateTimePicker extends React.PureComponent {
     const { value } = this.state
 
     if (type === 'time') {
-      const time = new Date(value)
+      let time
+      if (!value.getMonth) {
+        time = new Date()
+        time.setHours(value.hour)
+        time.setMinutes(value.minute)
+        time.setSeconds(0)
+        time.setMilliseconds(0)
+      } else {
+        time = value
+      }
       return <DatePickerIOS mode='time' date={time} onDateChange={this.iosChange} />
     } else {
       return <DatePickerIOS mode='date' date={value} onDateChange={this.iosChange} />
