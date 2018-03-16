@@ -10,6 +10,7 @@ color            | string    |         | Set radio button color
 invert           | boolean   | false   | Use inverted radio button style
 onPress          | function  |         | Function that gets called on radio button press
 renderCheck      | function  |         | Replaces the default check
+size             | number    | 32      | RadioButton size
 style            | object    |         | Radio button styles
 
 ### Code example

@@ -28,7 +28,7 @@ export default class CheckBox extends PureComponent {
   }
 
   renderCheckIcon = () => {
-    const {renderCheck, color, size, invert} = this.props
+    const { renderCheck, color, size, invert } = this.props
     /* Render custom check component if provided */
     if (renderCheck) {
       return renderCheck()
@@ -37,9 +37,7 @@ export default class CheckBox extends PureComponent {
     const checkSize = Math.floor(0.8 * (size || DEFAULT_SIZE))
     const checkColor = invert ? Colors.white : (color || DEFAULT_COLOR)
 
-    return (
-      <Icon name='done' size={checkSize} color={checkColor} style={styles.check} />
-    )
+    return <Icon name='done' size={checkSize} color={checkColor} style={styles.check} />
   }
 
   renderCheck = () => {
@@ -55,13 +53,13 @@ export default class CheckBox extends PureComponent {
 
     return (
       <Animated.View style={{transform: [{scale}], opacity}}>
-        {this.renderCheckIcon()}
+        { this.renderCheckIcon() }
       </Animated.View>
     )
   }
 
   render () {
-    const {onPress, style, size, color, invert} = this.props
+    const { onPress, style, size, color, invert } = this.props
     const checkBoxColor = color || DEFAULT_COLOR
 
     const dynamicStyle = {
@@ -72,12 +70,12 @@ export default class CheckBox extends PureComponent {
     }
 
     /* Check if component received custom style */
-    const containerStyle = style || [ dynamicStyle, styles.container ]
+    const containerStyle = style || [dynamicStyle, styles.container]
 
     return (
       <TouchableOpacity onPress={onPress} style={containerStyle} activeOpacity={1}>
         <View style={styles.innerContainer}>
-          {this.renderCheck()}
+          { this.renderCheck() }
         </View>
       </TouchableOpacity>
     )
