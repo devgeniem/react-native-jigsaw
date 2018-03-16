@@ -30,7 +30,7 @@ export default class RatingScreen extends Component {
           value={stars}
           count={5}
           onValueChange={this.setStars}
-          star={<Icon name='ios-star' size={32} color={'#fa0'} style={styles.star} />}
+          star={<Icon name='ios-star' size={32} color='#fa0' style={styles.star} />}
           empty={<Icon name='ios-star' size={32} color='#aaa' style={styles.star} />}
         />
 
@@ -38,7 +38,7 @@ export default class RatingScreen extends Component {
           value={hearts}
           count={5}
           onValueChange={this.setHearts}
-          star={<Icon name='ios-heart' size={32} color={'#f22'} style={styles.star} />}
+          star={<Icon name='ios-heart' size={32} color='#f22' style={styles.star} />}
           empty={<Icon name='ios-heart-outline' size={32} color='#aaa' style={styles.star} />}
         />
       </ScrollView>

@@ -3,14 +3,15 @@ Back to [react-native-jigsaw](../../README.md)
 Picker component
 ================
 ### API
-Prop name         | Type      | Default | Description
------------------ | --------- | ------- | ------------------
-closePicker       | function  |         | Function to close picker
-items             | array     |         | Array of {label, value} items
-onValueChange     | function  |         | Function to handle value changes
-overlayColor      | string    |         | Modal overlay background color
-style             | object    |         | Modal container styles
-visible           | boolean   | false   | Is picker visible or not
+Prop name         | Type      | Default           | Description
+----------------- | --------- | ----------------- | ------------------
+closePicker       | function  |                   | Function to close picker
+items             | array     |                   | Array of {label, value} items
+onValueChange     | function  |                   | Function to handle value changes
+overlayColor      | string    | 'rgba(0,0,0,0.5)' | Modal overlay background color
+style             | object    |                   | Modal container styles
+visible           | boolean   | false             | Is picker visible or not
+renderButtonsIOS  | function  |                   | Custom function to render modal buttons on iOS
 
 ### Code example
 

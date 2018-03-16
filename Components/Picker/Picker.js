@@ -41,7 +41,7 @@ export default class JigsawPicker extends PureComponent {
         <View style={styles.buttonContainer}>
           <Button onPress={closePicker} text='Cancel' width='100%' secondary />
         </View>
-        <View style={styles.spacer} />
+        { this.renderSpacer() }
         <View style={styles.buttonContainer}>
           <Button onPress={this.acceptChangeIOS} text='OK' width='100%' />
         </View>
@@ -88,20 +88,18 @@ export default class JigsawPicker extends PureComponent {
     )
   }
 
-  extractKey = (item, index) => index.toString()
+  keyExtractor = (item, index) => index.toString()
   renderSpacer = () => <View style={styles.spacer} />
 
-  renderPickerAndroid = () => {
-    return (
-      <FlatList
-        data={this.props.items}
-        renderItem={this.renderPickerItemAndroid}
-        keyExtractor={this.extractKey}
-        ListHeaderComponent={this.renderSpacer}
-        ListFooterComponent={this.renderSpacer}
-      />
-    )
-  }
+  renderPickerAndroid = () => (
+    <FlatList
+      data={this.props.items}
+      renderItem={this.renderPickerItemAndroid}
+      keyExtractor={this.keyExtractor}
+      ListHeaderComponent={this.renderSpacer}
+      ListFooterComponent={this.renderSpacer}
+    />
+  )
 
   renderPicker = () => Platform.OS === 'ios' ? this.renderPickerIOS() : this.renderPickerAndroid()
 

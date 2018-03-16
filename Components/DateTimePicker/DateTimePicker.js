@@ -70,8 +70,13 @@ export default class DateTimePicker extends React.PureComponent {
     <ModalContainer>
       { this.renderIosPickerType() }
       <View style={styles.buttons}>
-        <Button onPress={this.props.closePicker} text='Cancel' width='45%' secondary />
-        <Button onPress={this.iosAcceptChange} text='OK' width='45%' />
+        <View style={styles.buttonContainer}>
+          <Button onPress={this.props.closePicker} text='Cancel' width='100%' secondary />
+        </View>
+        <View style={styles.spacer} />
+        <View style={styles.buttonContainer}>
+          <Button onPress={this.iosAcceptChange} text='OK' width='100%' />
+        </View>
       </View>
     </ModalContainer>
   )
