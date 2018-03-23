@@ -64,7 +64,7 @@ export default class DateTimePicker extends React.PureComponent {
   renderIosButtons = () => {
     const { closePicker, renderIosContent, leftText, rightText } = this.props
 
-    if (renderIosContent) return renderIosContent()
+    if (renderIosContent) return renderIosContent(this.iosAcceptChange, closePicker)
 
     const leftButtonText = leftText || 'Cancel'
     const rightButtonText = rightText || 'OK'
