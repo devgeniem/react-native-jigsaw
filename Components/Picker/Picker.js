@@ -29,19 +29,22 @@ export default class JigsawPicker extends PureComponent {
   }
 
   renderButtonsIOS = () => {
-    const { closePicker, renderButtonsIOS } = this.props
+    const { closePicker, renderButtonsIOS, leftText, rightText } = this.props
 
     // Use custom buttons
     if (renderButtonsIOS) return renderButtonsIOS(this.acceptChangeIOS, closePicker)
 
+    const leftButtonText = leftText || 'Cancel'
+    const rightButtonText = rightText || 'OK'
+
     return (
       <View style={styles.buttons}>
         <View style={styles.buttonContainer}>
-          <Button onPress={closePicker} text='Cancel' width='100%' secondary />
+          <Button onPress={closePicker} text={leftButtonText} width='100%' secondary />
         </View>
         { this.renderSpacer() }
         <View style={styles.buttonContainer}>
-          <Button onPress={this.acceptChangeIOS} text='OK' width='100%' />
+          <Button onPress={this.acceptChangeIOS} text={rightButtonText} width='100%' />
         </View>
       </View>
     )

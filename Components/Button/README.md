@@ -18,10 +18,11 @@ buttonStyle      | object    |           | Button custom styles (overrides defau
 textStyle        | object    |           | Text custom styles (overrides default styles)
 leftIcon         | component |           | Component shown on left
 rightIcon        | component |           | Component shown on right
+renderContent    | function  |           | Override default content
 width            | number    |           | Button width
 height           | number    |           | Button height
 borderRadius     | number    |           | Button border radius
-borderWidth      | number    |           | Button border width 
+borderWidth      | number    |           | Button border width
 borderColor      | string    |           | Button border color
 backgroundColor  | object    |           | Button background color
 margin           | number    |           | Button margin
