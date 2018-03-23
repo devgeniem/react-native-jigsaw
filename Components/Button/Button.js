@@ -74,8 +74,9 @@ export default class Button extends React.PureComponent {
   }
 
   renderContent = () => {
-    const { loading, text } = this.props
+    const { loading, text, renderContent } = this.props
 
+    if (renderContent) return renderContent()
     if (loading) return this.renderLoader()
 
     const style = this.getTextStyle()
