@@ -48,11 +48,11 @@ If you find any bugs or problems, please open an issue.
 
 If you want to submit a pull request, please make sure that:
   
-    - Code is linted according to [Standard](https://standardjs.com/) style.
-    - All component props are documented.
-    - Documentation follows the form of project's components . See [Button](./Components/Button/README.md) documentation as an example.
-    - Ensure that component builds and works as expected
-    - Add example of the component usage to the Example app
+- Code is linted according to [Standard](https://standardjs.com/) style.
+- All component props are documented.
+- Documentation follows the form of project's components . See [Button](./Components/Button/README.md) documentation as an example.
+- Ensure that component builds and works as expected
+- Add example of the component usage to the Example app
   
 ## License
 
