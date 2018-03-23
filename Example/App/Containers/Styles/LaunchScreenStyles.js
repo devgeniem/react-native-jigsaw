@@ -9,11 +9,6 @@ export default StyleSheet.create({
   contentContainer: {
     padding: 15
   },
-  link: {
-    color: Colors.violet,
-    fontSize: 20,
-    paddingVertical: 12
-  },
   header: {
     paddingHorizontal: 15,
     paddingVertical: 20,
