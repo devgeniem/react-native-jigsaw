@@ -45,3 +45,6 @@ buck-out/
 #
 .env.example
 .env
+
+# Styleguide
+styleguide/
