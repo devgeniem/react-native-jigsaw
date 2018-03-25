@@ -16,11 +16,17 @@ style            | object    |         | Radio button styles
 ### Code example
 
 ```jsx
-import { RadioButton } from 'react-native-jigsaw'
-
+<div>
 <RadioButton
   onPress={this.toggleCheck}
-  checked={this.state.checked}
+  checked
   color='#000'
 />
+<br />
+<RadioButton
+  onPress={this.toggleCheck}
+  checked={false}
+  color='#000'
+/>
+</div>
 ```

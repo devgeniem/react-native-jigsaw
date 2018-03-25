@@ -37,7 +37,9 @@ textPadding      | number    |           | Button text padding
 ### Code example
 
 ```jsx
-import { Button } from 'react-native-jigsaw'
-
+<div>
 <Button text='Primary Button' onPress={this.onPress} />
+<br />
+<Button text='Secondary Button' secondary onPress={this.onPress} />
+</div>
 ```

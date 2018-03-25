@@ -19,10 +19,8 @@ renderButtons    | function  |           | Render custom buttons inside input (o
 ### Code example
 
 ```jsx
-import { NumericInput } from 'react-native-jigsaw'
-
 <NumericInput
-  value={this.state.value}
+  value={5}
   onValueChange={this.setValue}
   step={1}
   precision={0}

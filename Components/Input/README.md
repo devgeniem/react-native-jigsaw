@@ -31,10 +31,8 @@ textAlignVertical | string    |           | Input vertical text align
 ### Code example
 
 ```jsx
-import { Input } from 'react-native-jigsaw'
-
 <Input
-  value={this.state.inputValue}
+  value="Value"
   onChangeText={this.onChangeText}
   placeholder='Basic input'
 />

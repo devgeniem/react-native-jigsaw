@@ -16,11 +16,17 @@ style            | object    |           | CheckBox styles
 ### Code example
 
 ```jsx
-import { CheckBox } from 'react-native-jigsaw'
-
+<div>
 <CheckBox
   onPress={this.toggleCheck}
-  checked={this.state.checked}
+  checked
   color='#000'
 />
+<br />
+<CheckBox
+  onPress={this.toggleCheck}
+  checked={false}
+  color='#000'
+/>
+</div>
 ```
