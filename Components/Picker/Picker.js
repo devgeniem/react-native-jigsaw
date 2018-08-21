@@ -8,7 +8,13 @@ export default class JigsawPicker extends PureComponent {
   constructor (props) {
     super(props)
     this.state = {
-      pickerValue: null
+      pickerValue: props.value
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (nextProps.value !== this.props.value) {
+      this.setState({ pickerValue: nextProps.value })
     }
   }
 
