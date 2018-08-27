@@ -12,7 +12,7 @@ export default class JigsawPicker extends PureComponent {
     }
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps (nextProps) {
     if (nextProps.value !== this.props.value) {
       this.setState({ pickerValue: nextProps.value })
     }
