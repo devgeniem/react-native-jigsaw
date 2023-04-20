@@ -66,7 +66,7 @@
     "mockery": "^2.1.0",
     "react-dom": "16.0.0",
     "react-test-renderer": "16.0.0",
-    "reactotron-react-native": "^1.13.2",
+    "reactotron-react-native": "^5.0.3",
     "reactotron-redux": "^1.13.0",
     "reactotron-redux-saga": "^1.13.0",
     "snazzy": "^7.1.1",
